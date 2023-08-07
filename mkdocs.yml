@@ -17,8 +17,6 @@ nav:
   - Devlog: devlog.md
   - Contact: contact.md
 
-# theme: readthedocs
-
 theme:
   logo: img/HaochengIcon.png
   name: material
