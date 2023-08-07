@@ -43,13 +43,25 @@ However, this caused very sharp turns for the boss and had to be scrapped. Ultim
 
 ## Pounce 
 
-![Gif](../img/liondancer/LionDancer_FastPounce.gif){: style="width:80%"}
-![Gif](../img/liondancer/LionDancer_SlowPounce.gif){: style="width:80%"}
+![FastPounceGif](../img/liondancer/LionDancer_FastPounce.gif){: style="width:80%"}
 
-## Fan Shoot
+Pounces are the primary melee attacks of the boss. They were initially implemented with two animator states, one for winding up and one for strike. However, as I was tasked with renewing it, I realize there was room for optimization. Two states were used because the windup animation had displacement, and the strike animation was in-place; they were separated as the attack distance for the strike needed to be adjusted by the designers for gameplay purposes. However, the two animations can be combined as long as the strike doesn't have displacements. I edited the animations within the engine to achieve the desired effect by deleting horizontal displacement frames from the parent bone for the strike portion. Ultimately only one state was needed, preventing the need to adjust transitions and reset triggers. 
 
-![Gif](../img/liondancer/LionDancer_FanShoot.gif){: style="width:80%"}
+## Fan Shoot & Continuous Shoot
 
-## Continuous Shoot
+![FanShootGif](../img/liondancer/LionDancer_FanShoot.gif){: style="width:80%"}
 
-![Gif](../img/liondancer/LionDancer_ContinuousShoot.gif){: style="width:80%"}
+Aside from melee attacks, the boss is also capable of firing projectiles. I created two different types of projectile attacks for the boss, one where the boss shoots several shots in a fan shape (Fan Shoot) and another where the boss shoots continuously (Continuous Shoot).
+
+![ContinuousShootGif](../img/liondancer/LionDancer_ContinuousShoot.gif){: style="width:80%"}
+
+When I joined the project, the animation wasn't separated into windup strike and recovery states, and therefore challenging for any customization. For example, you can't change the boss's attack frequency as wished. I solved this by singling out sections from the animation that we want to be repeated, in this case, shooting, and ensuring that the animation can loop with itself. Therefore, we can repeat that particular attack action, as the diagram is shown below. 
+
+![ShootActivityDiagram](../img/liondancer/Shoot_ActivityDiagram.png)
+
+Another issue I faced was the fireball shoot timing would frequently be out of sync with the boss's animation. Because Behaviour Tree was used to implement the boss's attacks, the other programmers used wait nodes to manually create attack timings, which were subjected to the effect of frame rate. I first suggested moving all the attack logic into animation events; however, we realized that would give us less control from the behaviour tree. Ultimately I came up with a solution that utilizes both animation events and behaviour trees. 
+
+![ShootWaitTillEvent](../img/liondancer/Shoot_WaitTillEvent.png)
+
+## Pacing
+
