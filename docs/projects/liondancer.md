@@ -2,8 +2,8 @@
 
 Lion Dancer is a boss-rush arena fighter created as a startup project for Transfuzer 2023. I was one of the programmers from Team Carnivore. We were a group of two designers, one artist and three programmers. 
 
-Code base: private, belongs to the studio.<br />
-Recent build: https://drive.google.com/file/d/1Siw_MZHfxmzT_oI7Gypt6daOoDTPeoxD/view?usp=sharing
+**Code base:** private, belongs to the studio.<br />
+**Recent build:** [linkbuild](https://drive.google.com/file/d/1Siw_MZHfxmzT_oI7Gypt6daOoDTPeoxD/view?usp=sharing)
 
 My responsibility was Boss creation, fitting and fine-tuning boss moves and animations, and modifying decision trees. I joined the project halfway; at the time, most of the yearling boss moves were out of sync, the attack timings were either too early or delayed, and the boss moved somewhat mechanically. I was able to navigate existing code bases, create a messaging system that triggers attacks at exact times, and break down boss attacks to make them easily adjustable. I also integrated transitional animations to make the boss's movement more lively. Below are more specific breakdowns of how I implemented the boss's actions.
 
@@ -15,11 +15,11 @@ The continuous charge is one of the most complex attacks I implemented, mainly d
 
 The team had several plans to divide the move into implementable chunks, but ultimately I simplified it into four stages, as shown below. 
 
-![ChargeActivityDiagram](../img/liondancer/Charge_ActivityDiagram)
+![ChargeActivityDiagram](../img/liondancer/Charge_ActivityDiagram.png)
 
 The "transition" node represents the animation of the boss hitting the wall and turning around. Given that this animation will always be played together, it can be kept as one animation, reducing animator complexity. Only four animator states were needed, and using triggers to transition between charge and transition states proved sufficient. 
 
-![ChargeAnimator](../img/liondancer/Charge_Animator)
+![ChargeAnimator](../img/liondancer/Charge_Animator.png)
 
 One major challenge I faced was that new triggers could be set while another animation transition was still happening. This will prevent the ongoing trigger from resetting, always allowing new transitions through. The only workaround I found was manually resetting the triggers, which thankfully is O(n) complexity, and you only need to do it occasionally. This ensured the charge would be performed consistently without being stuck in a particular animator state. 
 
@@ -37,7 +37,7 @@ Vector3 dir = playerPos - bossPos;
 // check dot product between dir and right
 Vector3.Dot(right, dir) // > 0 means player on the right, < 0 means on the left.
 ```
-![ChargePlayerPosChecker](../img/liondancer/Charge_PlayerPosChecker)
+![ChargePlayerPosChecker](../img/liondancer/Charge_PlayerPosChecker.png)
 
 However, this caused very sharp turns for the boss and had to be scrapped. Ultimately I created a gradual turning script that runs in parallel, using the player as the target orientation. This gave a smooth curve to the boss's charge trajectory, which achieved the desired effect. 
 
