@@ -61,7 +61,33 @@ When I joined the project, the animation wasn't separated into windup strike and
 
 Another issue I faced was the fireball shoot timing would frequently be out of sync with the boss's animation. Because Behaviour Tree was used to implement the boss's attacks, the other programmers used wait nodes to manually create attack timings, which were subjected to the effect of frame rate. I first suggested moving all the attack logic into animation events; however, we realized that would give us less control from the behaviour tree. Ultimately I came up with a solution that utilizes both animation events and behaviour trees. 
 
+I created a node for the behaviour tree that waits indefinitely unless a message is received. The message is sent using an animation event to the behaviour tree. The following behaviour tree task would be executed when the boss gets the message. This change allowed attack timings to sync up perfectly. 
+
+``` C# linenums="1"
+public class WaitTillEventReceived : HasReceivedEvent
+{
+    private Animator _animator;
+    private bool InIdle => _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"); 
+    
+    public override void OnStart()
+    {
+        base.OnStart();
+        _animator = GetComponent<Animator>();
+    }
+
+    public override TaskStatus OnUpdate()
+    {
+        if (InIdle) return TaskStatus.Failure;
+        
+        return eventReceived ? TaskStatus.Success : TaskStatus.Running;
+    }
+}
+```
+
 ![ShootWaitTillEvent](../img/liondancer/Shoot_WaitTillEvent.png){: style="width:80%"}
+
+However, the change caused another issue. The boss has actions that conditionally abort other actions- such as a move dodging oncoming projectiles. That might interrupt the current animation, causing the message never to be received. The node would then remain in wait and freeze the behaviour tree. I had to add a check to see whether the current animator state is idle (because all action interrupts eventually return to idle); if so, return failure and abort the action. These changes ensured class A bugs like boss freezing wouldn't happen. 
 
 ## Pacing
 
+At first, the boss didn't have any transition between attacks.
