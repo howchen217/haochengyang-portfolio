@@ -1,9 +1,9 @@
 # Lion Dancer
 
-Lion Dancer is a boss-rush arena fighter created as a startup project for Transfuzer 2023. I was one of the programmers from Team Carnivore. We were a group of two designers, one artist and three programmers. 
+Lion Dancer is a boss-rush arena fighter created as a startup project for Transfuzer 2023, developed in Unity C#. I was one of the programmers from Team Carnivore. We were a group of two designers, one artist and three programmers. 
 
 **Code base:** private, belongs to the studio.<br />
-**Recent build:** [linkbuild](https://drive.google.com/file/d/1Siw_MZHfxmzT_oI7Gypt6daOoDTPeoxD/view?usp=sharing)
+**Recent build:** [game build link](https://drive.google.com/file/d/1Siw_MZHfxmzT_oI7Gypt6daOoDTPeoxD/view?usp=sharing)
 
 My responsibility was Boss creation, fitting and fine-tuning boss moves and animations, and modifying decision trees. I joined the project halfway; at the time, most of the yearling boss moves were out of sync, the attack timings were either too early or delayed, and the boss moved somewhat mechanically. I was able to navigate existing code bases, create a messaging system that triggers attacks at exact times, and break down boss attacks to make them easily adjustable. I also integrated transitional animations to make the boss's movement more lively. Below are more specific breakdowns of how I implemented the boss's actions.
 
@@ -86,7 +86,9 @@ public class WaitTillEventReceived : HasReceivedEvent
 
 ![ShootWaitTillEvent](../img/liondancer/Shoot_WaitTillEvent.png){: style="width:80%"}
 
-However, the change caused another issue. The boss has actions that conditionally abort other actions- such as a move dodging oncoming projectiles. That might interrupt the current animation, causing the message never to be received. The node would then remain in wait and freeze the behaviour tree. I had to add a check to see whether the current animator state is idle (because all action interrupts eventually return to idle); if so, return failure and abort the action. These changes ensured class A bugs like boss freezing wouldn't happen. 
+There's also a wide application for such a node. You can use it to divide animation into sections; for instance, the pounce attack. The wait node can keep the boss from moving until it has finished its windup portion of the animation. After that, charge it forward and enable its hitbox. The node can also let the animator wait for the end of an animation -which is good if you want to trigger transitions automatically. 
+
+However, adding the node caused another issue. The boss has actions that conditionally abort other actions- such as a move dodging oncoming projectiles. That might interrupt the current animation, causing the message never to be received. The node would then remain in wait and freeze the behaviour tree. I had to add a check to see whether the current animator state is idle (because all action interrupts eventually return to idle); if so, return failure and abort the action. These changes ensured class A bugs like boss freezing wouldn't happen. 
 
 ## Pacing
 
