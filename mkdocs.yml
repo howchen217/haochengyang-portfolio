@@ -18,6 +18,7 @@ nav:
   - Contact: contact.md
 
 theme:
+  favicon: img/favicon.ico
   logo: img/HaochengIcon.png
   name: material
   features:

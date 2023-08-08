@@ -92,4 +92,7 @@ However, adding the node caused another issue. The boss has actions that conditi
 
 ## Pacing
 
-At first, the boss didn't have any transition between attacks.
+The boss also needed transitions between attacks. At first, it didn't have any, resulting it to attack one after another.
+
+## Earthquake
+
