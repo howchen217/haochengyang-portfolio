@@ -92,7 +92,7 @@ However, adding the node caused another issue. The boss has actions that conditi
 
 ## Pacing
 
-The boss also needed transitions between attacks. At first, it didn't have any, resulting it to attack one after another.
+The boss also needed transition periods between attacks. The boss' initial version had it attack after attack without giving the player any breathing room and not changing its position. This resulted in the boss looking like a stationary tower instead of an agile creature, as well as putting too much pressure on the player. As a result, I began implementing pacing between boss attacks. 
 
 ## Earthquake
 
