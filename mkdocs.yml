@@ -14,7 +14,8 @@ nav:
       - A for Aletta: projects/aforaletta.md
     - VR:
       - Therapet: projects/therapet.md
-  - Devlog: devlog.md
+  - Devlog:
+    - creatingfeints.md
   - Contact: contact.md
 
 theme:
