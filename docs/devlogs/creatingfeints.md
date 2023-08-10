@@ -1,4 +1,4 @@
-# creating feints with animator transitions
+# Creating feints with animator transitions
 
 August 10, 2023
 
@@ -13,10 +13,12 @@ Feints in Lion Dancer are basically the boss starting the windup animation for o
 Feints can be a fun way of reusing animations (given how costly they are to produce); however, if badly transitioned, it can look very bizarre. The fan shoot windup animation happens to have two places the boss lunges forward. The first is when it turns around, and the second is when it is ready to shoot. With careful adjustment to transition timings and transition length, I was able to create two versions of the feints. 
 
 **Feint after it turns around:**
+
 ![TurnFeintAnimator](../img/liondancer/Feint_TurnFeintAnimator.png)
 ![TurnFeintGif](../img/liondancer/Feint_TurnFeint.gif){: style="width:80%"}
 
 **Feint after it is ready to shoot:**
+
 ![TurnFeintAnimator](../img/liondancer/Feint_ShootFeintAnimator.png)
 ![TurnFeintGif](../img/liondancer/Feint_ShootFeint.gif){: style="width:80%"}
 
