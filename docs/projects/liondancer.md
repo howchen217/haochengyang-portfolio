@@ -90,6 +90,14 @@ There's also a wide application for such a node. You can use it to divide animat
 
 However, adding the node caused another issue. The boss has actions that conditionally abort other actions- such as a move dodging oncoming projectiles. That might interrupt the current animation, causing the message never to be received. The node would then remain in wait and freeze the behaviour tree. I had to add a check to see whether the current animator state is idle (because all action interrupts eventually return to idle); if so, return failure and abort the action. These changes ensured class A bugs like boss freezing wouldn't happen. 
 
+## Feints
+
+![TurnFeintGif](../img/liondancer/Feint_TurnFeint.gif){: style="width:80%"}
+
+Because Lion Dancer's design rests on having players identify boss moves and react accordingly, feints are created to throw the players off by mixing up boss windup and actual attacks. It can be done by creating new animator transitions. 
+
+To go into details on how they are created, check out my [creating feints with animator transitions](../devlogs/creatingfeints.md) devlog. 
+
 ## Pacing
 
 The boss also needed transition periods between attacks. The boss' initial version had it attack after attack without giving the player any breathing room and not changing its position. This resulted in the boss looking like a stationary tower instead of an agile creature, as well as putting too much pressure on the player. As a result, I began implementing pacing between boss attacks. 
