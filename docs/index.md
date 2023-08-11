@@ -22,7 +22,7 @@ Store.
 
 **Lion Dancer:**
 
-![EarthQuakeGif](../img/liondancer/EarthQuake.gif){: style="width:80%"}
+![EarthQuakeGif](img/liondancer/EarthQuake.gif){: style="width:80%"}
 
 ## Achievements
 
