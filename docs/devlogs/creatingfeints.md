@@ -2,7 +2,7 @@
 
 August 10, 2023
 
-To give you some background, I have been working on a boss-rush arena fighter as a startup project for Transfuzer 2023, called Lion Dancer, developed in Unity C#. I was one of the three programmers on the Team, and my responsibility was to program boss attacks and fine-tune animations. Because of how many animations there were, lots of transition work needed to be done, and I gained quite a bit of experience with that. 
+Haody readers. To give you some background, I have been working on a boss-rush arena fighter as a startup project for Transfuzer 2023, called Lion Dancer, developed in Unity C#. I was one of the three programmers on the Team, and my responsibility was to program boss attacks and fine-tune animations. Because of how many animations there were, lots of transition work needed to be done, and I gained quite a bit of experience with that. 
 
 One of the core designs for Lion Dancer is Player Reaction. Much like a Souls game, players must recognize boss attack patterns and find ways to counter-attack. And, in true Souls-like fashion, we were also looking for ways to throw the players off, to break their established pattern. One of the ways we came up was feints. 
 
