@@ -15,12 +15,12 @@ Feints can be a fun way of reusing animations (given how costly they are to prod
 **Feint after it turns around:**
 
 ![TurnFeintAnimator](../img/liondancer/Feint_TurnFeintAnimator.png)
-![TurnFeintGif](../img/liondancer/Feint_TurnFeint.gif){: style="width:80%"}
+![type:video](../img/liondancer/Feint_TurnFeint.webm){: style="width:80%"}
 
 **Feint after it is ready to shoot:**
 
 ![TurnFeintAnimator](../img/liondancer/Feint_ShootFeintAnimator.png)
-![TurnFeintGif](../img/liondancer/Feint_ShootFeint.gif){: style="width:80%"}
+![type:video](../img/liondancer/Feint_ShootFeint.webm){: style="width:80%"}
 
 Just looking at feints might be misleading. To see how fan shoot and pounce looked without feinting, check out my [Lion Dance portfolio page](../projects/liondancer.md). In conclusion, changing animator transitions can easily create different versions of moves, and you can drag them around to find the best timing. Even if they don't look perfect, it's hard to notice in the heat of gameplay. 
 

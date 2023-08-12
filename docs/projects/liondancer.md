@@ -9,7 +9,7 @@ My responsibility was Boss creation, fitting and fine-tuning boss moves and anim
 
 ## Continuous Charge
 
-![ChargeGif](../img/liondancer/LionDancer_Charge.gif){: style="width:80%"}
+![type:video](../img/liondancer/LionDancer_Charge.webm){: style="width:80%"}
 
 The continuous charge is one of the most complex attacks I implemented, mainly due to the sheer length of the action. The boss first winds up for the attack, preparing to charge. After, it sets towards the player like a bull while correcting its trajectory. Once it hits an obstacle, it is stunned for a brief period before starting another charge. It will repeat the charge three times before it finally stops and transitions into a recovery animation.
 
@@ -43,15 +43,15 @@ However, this caused very sharp turns for the boss and had to be scrapped. Ultim
 
 ## Pounce 
 
-![FastPounceGif](../img/liondancer/LionDancer_FastPounce.gif){: style="width:80%"}
-![SlowPounceGif](../img/liondancer/LionDancer_SlowPounce.gif){: style="width:80%"}
+![type:video](../img/liondancer/LionDancer_FastPounce.webm){: style="width:80%"}
+![type:video](../img/liondancer/LionDancer_SlowPounce.webm){: style="width:80%"}
 
 Pounces are the primary melee attacks of the boss. They were initially implemented with two animator states, one for winding up and one for strike. However, as I was tasked with renewing it, I realize there was room for optimization. Two states were used because the windup animation had displacement, and the strike animation was in-place; they were separated as the attack distance for the strike needed to be adjusted by the designers for gameplay purposes. However, the two animations can be combined as long as the strike doesn't have displacements. I edited the animations within the engine to achieve the desired effect by deleting horizontal displacement frames from the parent bone for the strike portion. Ultimately only one state was needed, removing the need to adjust transitions and reset triggers. 
 
 ## Fan Shoot & Continuous Shoot
 
-![FanShootGif](../img/liondancer/LionDancer_FanShoot.gif){: style="width:80%"}
-![ContinuousShootGif](../img/liondancer/LionDancer_ContinuousShoot.gif){: style="width:80%"}
+![type:video](../img/liondancer/LionDancer_FanShoot.webm){: style="width:80%"}
+![type:video](../img/liondancer/LionDancer_ContinuousShoot.webm){: style="width:80%"}
 
 Aside from melee attacks, the boss is also capable of firing projectiles. I created two different types of projectile attacks for the boss, one where the boss shoots several shots in a fan shape (Fan Shoot) and another where the boss shoots continuously (Continuous Shoot).
 
@@ -92,7 +92,7 @@ However, adding the node caused another issue. The boss has actions that conditi
 
 ## Feints
 
-![TurnFeintGif](../img/liondancer/Feint_TurnFeint.gif){: style="width:80%"}
+![TurnFeintGif](../img/liondancer/Feint_TurnFeint.webm){: style="width:80%"}
 
 Because Lion Dancer's design rests on having players identify boss moves and react accordingly, feints are created to throw the players off by mixing up boss windup and actual attacks. It can be done by creating new animator transitions. 
 
