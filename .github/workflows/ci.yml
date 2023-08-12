@@ -8,6 +8,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{haochengyang.games}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
