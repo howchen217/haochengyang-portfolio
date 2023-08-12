@@ -92,7 +92,7 @@ However, adding the node caused another issue. The boss has actions that conditi
 
 ## Feints
 
-![TurnFeintGif](../img/liondancer/Feint_TurnFeint.webm){: style="width:80%"}
+![type:video](../img/liondancer/Feint_TurnFeint.webm){: style="width:80%"}
 
 Because Lion Dancer's design rests on having players identify boss moves and react accordingly, feints are created to throw the players off by mixing up boss windup and actual attacks. It can be done by creating new animator transitions. 
 
