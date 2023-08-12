@@ -20,9 +20,10 @@ Store.
 
 ## Featured
 
-**Lion Dancer:**
+Currently working on lion dancer for Transfuzer 2023, a boss-rush arena fighter, as well as Scouts' Odyssey, a narrative puzzle game as a master's final project.
 
-![EarthQuakeGif](img/liondancer/EarthQuake.gif){: style="width:80%"}
+![type:video](img/liondancer/EarthQuake.webm){: style="float: left;width:40%; margin-right:5%;"}
+![type:video](img/liondancer/EarthQuake.webm){: style="width:40%"}
 
 ## Achievements
 

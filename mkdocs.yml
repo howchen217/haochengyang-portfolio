@@ -73,4 +73,15 @@ extra:
     - icon: fontawesome/brands/youtube
       link: google.com
 
+plugins:
+    - mkdocs-video:
+        css_style:
+          width: "80%"
+        is_video: True
+        video_type: webm
+        video_autoplay: True
+        video_loop: True
+        video_muted: True
+        video_controls: False
+
 copyright: Copyright &copy; 2023 Haocheng Yang
