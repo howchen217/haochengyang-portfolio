@@ -90,17 +90,44 @@ In summary, I successfully implemented the following functionalities as behaviou
 - Camera shake (with and without scene props shaking)
 - Playing Music & SFX (Centralized Music System with game Instance)
 
-Notably, the Camera shake task prompted me to explore global variables. Creating an immersive camera shake involving stage props movement (shaking) posed a challenge, given the number of props in the scene. Having a global delegate would prove very useful in this case, given you can have all scene props listening in. Initially, I thought Unreal Header Tool might disallow global variables due to Unreal's data encapsulation philosophy. However, researching about it proved it feasible -I made a global Multicast delegate named `onCameraShake`, with all scene props listening to it from BeginPlay(). Triggering the delegate callback for every scene prop eliminated the need for lookups/assignments. You can also assign functionality of each callback from blueprint; in the case, shaking side to side.  
+Notably, the Camera shake task prompted me to explore global variables. Creating an immersive camera shake involving stage props movement (shaking) posed a challenge, given the number of props in the scene. Having a global delegate would prove very useful in this case, given you can have all scene props listening in. Initially, I thought Unreal Header Tool might disallow global variables due to Unreal's data encapsulation philosophy. However, researching about it proved it feasible -I made a global Multicast delegate named `OnCameraShake`, with all scene props listening to it from BeginPlay(). Triggering the delegate callback for every scene prop eliminated the need for lookups/assignments. You can also assign functionality of each callback from blueprint; in the case, shaking side to side.  
 
+**OnCameraShake definition:**
 ```C++ linenums="1"
-UFUNCTION(BlueprintCallable, Category = "MyDelegate")
-void TriggerCameraShake();
+namespace StageDelegates
+{
+	DECLARE_MULTICAST_DELEGATE(FOnCameraShake);
+	extern FOnCameraShake OnCameraShake;
+};
 ```
 
 ```C++ linenums="1"
-void AMyActor::TriggerCameraShake()
+StageDelegates::FOnCameraShake StageDelegates::OnCameraShake;
+```
+
+**APropActor, which make use of the global delegate:**
+```C++ linenums="1"
+UCLASS()
+class SCOUTSODYSSEY_API APropActor : public AActor
 {
-    onCameraShake.Broadcast();
+	GENERATED_BODY()
+	
+public:
+	APropActor();
+
+	UFUNCTION(BlueprintImplementableEvent, Category=OnCameraShake)
+	void OnCameraShake();
+
+protected:
+	virtual void BeginPlay() override;
+};
+```
+
+```C++ linenums="1"
+void APropActor::BeginPlay()
+{
+	Super::BeginPlay();
+	StageDelegates::OnCameraShake.AddUObject(this, &APropActor::OnCameraShake);
 }
 ```
 
@@ -118,6 +145,40 @@ Working with Unreal's behaviour tree educated me on its quirks -it does conditio
 
 Additionally, I tried using templates in Unreal Engine. I needed to choose animations from maps using an enum, but different animals needed separate enums. My attempt to use templates for it hit a roadblock: Unreal Header Tool couldn't resolve templates; they couldn't be used in a UClass. After persistent experimentation, I found a solution by creating a non-UClass class that encapsulates a TMap, with tailored functions. It worked surprisingly well without issues.
 
+```C++ linenums="1"
+template<typename T>
+class AnimationMap
+{
+public:
+
+	USpriteAnimationDataAsset* Find(T Key)
+	{
+		return *Map.Find(Key);
+	}
+
+	USpriteAnimationDataAsset* Find(int Index)
+	{
+		T Key = static_cast<T>(Index);
+		
+		return *Map.Find(Key);
+	}
+
+	void Add(T Key, USpriteAnimationDataAsset* AnimDA)
+	{
+		Map.Add(Key, AnimDA);
+	}
+
+	int Num()
+	{
+		return Map.Num();
+	}
+
+protected:
+	TMap<T, USpriteAnimationDataAsset*> Map;
+	
+};
+```
+
 I also used child actor components for the first time in Unreal. However, I found them a bit cumbersome. The squirrel AI depended on the tree trunk and had to stay behind it as the player approached, so I grouped the trunk and Squirrel AI as child actor components in a blueprint for simplicity. But this approach didn't work well because I couldn't directly access child variables. Instead, I had to retrieve the child actor, cast it, and then access the variables. I would refrain from using child actor components in the future, as they introduce unnecessary complexity compared to Unity's nested prefabs.
 
 ## Debugging tools
@@ -126,7 +187,30 @@ I made custom macros for debugging as well, recognizing the significance of null
 
 However, one thing to note, you need to use GetOwner()->GetName() to print the actor's name if you are logging from an actor component. GetName() would only print the component name. This is the reason why I made two macros LOG_ACTOR and LOG_OWNER to locate which actor is calling. 
 
-Result:
+**Macro Examples:**
+```C++
+#define PRINT(Text) if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, Text, false)
+
+
+#define CUR_CLASS_FUNC (FString(__FUNCTION__))
+
+#define CUR_LINE (FString::FromInt(__LINE__))
+
+#define CUR_CLASS_FUNC_LINE (CUR_CLASS_FUNC + "(" + CUR_LINE + ")")
+
+#define CUR_ACTOR_CLASS_FUNC_LINE ("[" + GetName() + "] => " + CUR_CLASS_FUNC_LINE)
+
+#define CUR_OWNER_CLASS_FUNC_LINE ("[" + GetOwner()->GetName() + "] => " + CUR_CLASS_FUNC_LINE)
+
+
+#define LOG(Text) 		   UE_LOG(LogTemp, Warning,TEXT("%s: %s"), *CUR_CLASS_FUNC_LINE, *FString(Text))
+ 
+#define LOG_ACTOR(Text) 		  UE_LOG(LogTemp, Warning,TEXT("%s: %s"), *CUR_ACTOR_CLASS_FUNC_LINE, *FString(Text))
+
+#define LOG_OWNER(Text) UE_LOG(LogTemp, Warning,TEXT("%s: %s"), *CUR_OWNER_CLASS_FUNC_LINE, *FString(Text))
+
+#define LOG_ERROR(Text) 		 UE_LOG(LogTemp,Error,TEXT("%s: %s"), *CUR_CLASS_FUNC_LINE, *FString(Text))
+```
 
 ## Conclusion
 
