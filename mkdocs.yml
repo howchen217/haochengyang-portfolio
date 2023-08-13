@@ -75,6 +75,8 @@ extra:
 
 plugins:
     - mkdocs-video:
+        css_style:
+          align: “left”
         is_video: True
         video_type: webm
         video_autoplay: True
