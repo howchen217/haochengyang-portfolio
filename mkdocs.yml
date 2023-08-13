@@ -75,8 +75,6 @@ extra:
 
 plugins:
     - mkdocs-video:
-        css_style:
-          width: "80%"
         is_video: True
         video_type: webm
         video_autoplay: True
