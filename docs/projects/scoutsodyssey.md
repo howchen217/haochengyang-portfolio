@@ -17,7 +17,8 @@ I was responsible for most gameplay systems, while the other programmer focused 
 
 The dialogue system in Scout's Odyssey needed two main functions: speech and choices. Initially, I created a blueprint where the dialogue box always appeared at the bottom. The UI switched between displaying text (for speaking) and a list view (for choices). Each character had a profile picture for identification. It was easy to implement, given all character dialogues share the exact UI. However, this approach clashed with our game's focus on environmental art. Covering a large part of the screen with a bottom text box wasn't suitable. We also wanted real-time scene performances, like shaking environments when a character shouts or the narrator comments on player actions.
 
-![type:video](../img/scoutsodyssey/InitialDialogueSystem.webm){: style="width:80%"}
+![type:video](../img/scoutsodyssey/InitialDialogueSystem.webm){: style="float: left;width:40%; margin-right:5%;"}
+![type:video](../img/scoutsodyssey/StardewDialogue.webm){: style="width:40%"}
 
 To address this, I adopted a speech bubble dialogue system inspired by older RPGs like Romancing Saga and Stardew Valley. Romancing Saga uses speech bubbles to maintain the player's visual focus, while Stardew Valley switches between speech bubbles and text boxes for performance-heavy sections or emotional moments that require detailed facial expressions.
 
