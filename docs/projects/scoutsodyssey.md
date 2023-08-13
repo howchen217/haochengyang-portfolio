@@ -188,7 +188,7 @@ I made custom macros for debugging as well, recognizing the significance of null
 However, one thing to note, you need to use GetOwner()->GetName() to print the actor's name if you are logging from an actor component. GetName() would only print the component name. This is the reason why I made two macros LOG_ACTOR and LOG_OWNER to locate which actor is calling. 
 
 **Macro Examples:**
-```C++
+```C++ linenums="1"
 #define PRINT(Text) if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, Text, false)
 
 

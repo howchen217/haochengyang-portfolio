@@ -16,8 +16,6 @@ developer. My self-developed game has
 received a 4.6 rating on the Google Play
 Store.
 
-## Testimonials
-
 ## Featured
 
 Currently working on lion dancer for Transfuzer 2023, a boss-rush arena fighter, as well as Scouts' Odyssey, a narrative puzzle game as a master's final project.
@@ -34,4 +32,7 @@ Now also available on Steam.
 ![Screenshot](img/AForAlettaCover.png){: style="height:180px;width:120px"}
 
 
+**Lion Dancer**:
+
+2023 Hypergryph Coreblazer, "Distinguished Excellence Award for Extraordinary Cultural Innovation in Gaming"
 

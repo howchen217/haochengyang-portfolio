@@ -1,5 +1,21 @@
 # Afterville
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/T8U7b9tQVs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+A narrative-based game where players will help rebuild and bring together a small town community as the Mayor’s Assistant. 
+
+I was the main programmer of the project, responsible for the Scheduled NPC AI behaviors and all player mechanics. 
+
+I implemented:
+NPC AI that follows daily schedules
+Stamina system that ties to time of day
+Weekly policy selection & Town prosperity values
+Music
+Actions that players can perform
+Game Download: https://haochengyang.itch.io/afterville
+
+Project Repository: https://gitlab.com/peacegame/peacegame
+
 # NPC AI
 
 The feature on which I spent the most time refining is NPC AI. In the game, we have NPCs with whom players can interact, each with a unique schedule, appearance, and personality. Each NPC must have an AI to support its in-game behaviours. I have previously created AI in Unity, where I have experimented with behaviour trees for the behaviour of monsters or quest NPCs. However, the behaviours I have created are all based on state-switching. For example, they only need to move from a wandering state to a search state when they detect the player. For the NPCs in our game, however, I realise the difficulty of creating their behaviours in a behaviour tree. It would be incredibly challenging because they do not behave on a state-by-state basis. Instead, they have a schedule that they must follow. For instance, on Monday at 6 o'clock, the Mayor would be at his house, then go to his office to work. At the same time, we still need the capability of behaviour trees since characters have different states. At each location, they would have other behaviours. For example, at the saloon, the NPC would sit at a specific spot, and at home, they would instead wander around. Eventually, considering all these factors, I found a solution incorporating a behaviour tree and their daily schedules to create the NPC AI.
