@@ -1,6 +1,6 @@
 # Scouts Odyssey
 
-Scouts' Odyssey is a narrative puzzle adventure I developed for The Chinese Room as my final master's project. Our team consisted of ten members: one producer, two programmers (myself and another focusing on technical art), three designers, three artists, and an audio expert. We worked for about four months, from May 2023 to September, to create a complete puzzle level.
+Scout's Odyssey is a narrative puzzle adventure I developed for The Chinese Room as my final master's project. Our team consisted of ten members: one producer, two programmers (myself and another focusing on technical art), three designers, three artists, and an audio expert. We worked for about four months, from May 2023 to September, to create a complete puzzle level.
 
 **Code base:** link available soon.<br />
 **Recent build:** [game build link](https://drive.google.com/file/d/1pZ5tGrkTKZM9uGcTLOG0YNbTUz1beL27/view?usp=sharing)
@@ -72,13 +72,65 @@ The feature was further improved by adding pickup animations, and since the feat
 
 ![type:video](../img/scoutsodyssey/ScenePerformance.webm){: style="width:80%"}
 
+As mentioned earlier, one of the reasons I chose a decision tree for implementing dialogue was its flexibility in incorporating scene performances, a crucial aspect of the game. I realized behaviour tree tasks could seamlessly trigger level sequences during dialogue, allowing dynamic events like spotlights moving or descending starboards. While creating such functionality was relatively straightforward, I did encounter a challenge with Unreal's level sequences resetting to their initial positions post-playback every time. This wasn't desired; for instance, the starboards should remain in their finished positions. Manually adjusting the "When Finished" setting for each track of the level sequence proved cumbersome and inefficient. Fortunately, adjusting default settings by editing the configs in DefaultEngine.ini proved effective:
 
+```
+[/Script/LevelSequence.LevelSequence]
+DefaultCompletionMode=KeepState
+```
+
+In summary, I successfully implemented the following functionalities as behaviour tree tasks for scene performances:
+
+- Playing level sequences
+- Tutorial board UI falling & rising
+- Triggering transformation of scene objects
+- Enabling/Disabling player input
+- Automatic player repositioning during specific events (e.g., encountering a bear, forgetting to collect an item)
+- Transitioning to another level
+- Camera shake (with and without scene props shaking)
+- Playing Music & SFX (Centralized Music System with game Instance)
+
+Notably, the Camera shake task prompted me to explore global variables. Creating an immersive camera shake involving stage props movement (shaking) posed a challenge, given the number of props in the scene. Having a global delegate would prove very useful in this case, given you can have all scene props listening in. Initially, I thought Unreal Header Tool might disallow global variables due to Unreal's data encapsulation philosophy. However, researching about it proved it feasible -I made a global Multicast delegate named `onCameraShake`, with all scene props listening to it from BeginPlay(). Triggering the delegate callback for every scene prop eliminated the need for lookups/assignments. You can also assign functionality of each callback from blueprint; in the case, shaking side to side.  
+
+```C++ linenums="1"
+UFUNCTION(BlueprintCallable, Category = "MyDelegate")
+void TriggerCameraShake();
+```
+
+```C++ linenums="1"
+void AMyActor::TriggerCameraShake()
+{
+    onCameraShake.Broadcast();
+}
+```
+
+In addition to these task nodes, I integrated all dialogue and interactions into the game. It required implementing various events, such as initiating dialogues at specific moments or triggering AI behaviour. Initially, referencing actors and assigning delegates between them created dependencies and made debugging complex. A breakthrough came when I recognized the potential of the level blueprint. Setting delegates there, where references from all actors in the scene are available by default, proved cleaner and centralized. This approach allowed quick identification of any delegate issues. I'll undoubtedly apply this method in future projects.
+
+![ConsumeInput](../img/scoutsodyssey/LevelBP_SignPostEventBind.png)
 
 ## AI for Animated Actors
 
 ![type:video](../img/scoutsodyssey/ScoutsOdyssey_Squirrels.webm){: style="width:80%"}
 
+Furthermore, I developed AI for animated actors in the game. Specifically, I created AI for three key characters: the bear, squirrel, and bee. Behaviour trees drive these characters' behaviours, and their animations are achieved through Unreal's flipbook materials.
 
+Working with Unreal's behaviour tree educated me on its quirks -it does conditional aborts with decorators. This contrasts with Unity's behaviour designer plugin, which employs nodes for condition checks. Unreal's approach offers greater flexibility by allowing different abort types for distinct decorators on the same composite node. You can pick which condition is permitted to abort tasks, which proved helpful when I had both a cooldown decorator and a distance check on the same sequence. 
+
+Additionally, I tried using templates in Unreal Engine. I needed to choose animations from maps using an enum, but different animals needed separate enums. My attempt to use templates for it hit a roadblock: Unreal Header Tool couldn't resolve templates; they couldn't be used in a UClass. After persistent experimentation, I found a solution by creating a non-UClass class that encapsulates a TMap, with tailored functions. It worked surprisingly well without issues.
+
+I also used child actor components for the first time in Unreal. However, I found them a bit cumbersome. The squirrel AI depended on the tree trunk and had to stay behind it as the player approached, so I grouped the trunk and Squirrel AI as child actor components in a blueprint for simplicity. But this approach didn't work well because I couldn't directly access child variables. Instead, I had to retrieve the child actor, cast it, and then access the variables. I would refrain from using child actor components in the future, as they introduce unnecessary complexity compared to Unity's nested prefabs.
+
+## Debugging tools
+
+I made custom macros for debugging as well, recognizing the significance of null pointer checks in avoiding hard-to-debug crashes. I extended them from Unreal's default GEngine prints and UE_LOG macros (which were a bit verbose). It prints line numbers, class and function, making it easy to pinpoint problems.
+
+However, one thing to note, you need to use GetOwner()->GetName() to print the actor's name if you are logging from an actor component. GetName() would only print the component name. This is the reason why I made two macros LOG_ACTOR and LOG_OWNER to locate which actor is calling. 
+
+Result:
 
 ## Conclusion
+
+In conclusion, this project has been a valuable learning experience, although there are areas where I could improve. For instance, I intend to prioritize creating blueprint prototypes before solidifying functionalities in C++. This approach helps find all potential system usages, leading to more informed and effective system design. Additionally, I could use pawns for speakable actors to mitigate the issue of sharing AI controllers, benefiting from an assignable and accessible AI controller by default. Furthermore, I recommend avoiding child actor components due to their limitations in accessing child variables.
+
+I also recognize the benefit of setting up delegates in level blueprints instead of referencing actors with each other. By centralizing events in the level blueprint, unnecessary dependencies are minimized, and maintaining an overview of all delegates becomes more manageable during debugging.
 
