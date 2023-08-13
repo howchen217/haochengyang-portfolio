@@ -2,6 +2,9 @@
 
 Scouts' Odyssey is a narrative puzzle adventure I developed for The Chinese Room as my final master's project. Our team consisted of ten members: one producer, two programmers (myself and another focusing on technical art), three designers, three artists, and an audio expert. We worked for about four months, from May 2023 to September, to create a complete puzzle level.
 
+**Code base:** link available soon.<br />
+**Recent build:** [game build link](https://drive.google.com/file/d/1pZ5tGrkTKZM9uGcTLOG0YNbTUz1beL27/view?usp=sharing)
+
 In the game, you play as a young scout living out your scout leader's campfire story in your imagination. Because it's all in your head, you can change the environment around you, which helps you solve the challenges presented. The game mixes traditional puzzle elements (like collecting items and using them in the environment) with a cool twist – you can change the environment itself while you play.
 
 I was responsible for most gameplay systems, while the other programmer focused on technical art. Overall, I implemented the dialogue system, inventory system, scene performance, and AI for animated characters. I also made tools to make debugging easier. In the upcoming sections, I'll explain the problems I faced and how I tackled them.
@@ -14,17 +17,17 @@ The dialogue system in Scout's Odyssey needed two main functions: speech and cho
 
 To address this, I adopted a speech bubble dialogue system inspired by older RPGs like Romancing Saga and Stardew Valley. Romancing Saga uses speech bubbles to maintain the player's visual focus, while Stardew Valley switches between speech bubbles and text boxes for performance-heavy sections or emotional moments that require detailed facial expressions.
 
-![type:video](../img/scoutsodyssey/StardewDialogue.webm)
-
 For Scout's Odyssey, having just speech bubbles to express dialogue would be enough, especially as characters were sizeable on-screen. For off-screen characters like the narrator, their dialogue is displayed alongside their profile image at the bottom.
 
 To implement this, I chose a behaviour tree approach. It aids debugging (showing the executing node). It also allows adding performance-related functions later, like camera shakes or level sequences (explained further in the scene performance section).
 
 Initially, I designed it to be component-based. Each speakable actor had a dialogue component, and their individual behaviour trees controlled the dialogue, avoiding unnecessary dependencies. I realized this design in C++ after prototyping with blueprints. The component spawned UI elements based on behaviour tree tasks. You can find the UML of the component below. 
 
-I created two behaviour tree tasks: "choice" and "speak," executed sequentially. The chosen node had options that determined if the player or NPC was speaking, positioning the UI accordingly. As only speakable actors held the component, they would be the second speaker, and the speech bubble would spawn at their location. 
+![UML](../img/scoutsodyssey/DialogueSystemUML.png)
 
-![Screenshot](../img/scoutsodyssey/DialogueTree.png)
+![DialogueTree](../img/scoutsodyssey/DialogueTree.png)
+
+I created two behaviour tree tasks: "choice" and "speak," executed sequentially. The chosen node had options that determined if the player or NPC was speaking, positioning the UI accordingly. As only speakable actors held the component, they would be the second speaker, and the speech bubble would spawn at their location. 
 
 With this, the dialogue system aloowed players to converse with any actor. However, evolving scene performance requirements demanded more functionalities. Agile development led to constant iterations, adding new features. Over the four months, I had to make the following changes:
 
@@ -47,6 +50,18 @@ In hindsight, starting with a rapid blueprint prototype and later transitioning 
 
 ## Inventory System
 
+
+Implementing the inventory system was relatively straightforward, thanks to my familiarity with gameplay tags and data assets from a previous project, Afterville. I chose to use gameplay tags for object identification rather than enums. This choice allowed for easy extension in the editor without requiring code changes. Designers could create items without needing programmer involvement. Items were represented by unique gameplay tags within data assets. The inventory itself was designed as an attachable component applicable to any actor.
+
+Regarding player controls, I incorporated mouse scroll for item switching and holding the "E" key to pick up items. To maintain modularity, I placed the item pickup input logic on the item itself, avoiding direct coding on the player pawn. Initially, this approach led to an odd issue: when multiple items were present, holding "E" picked up a random item from among them rather than the nearest one. The problem arose from the default setting of Input action consuming input. While this would be fine on the player pawn, which receives singular input, it caused confusion with multiple actors. Disabling input consumption entirely resolved the issue.
+
+![ConsumeInput](../img/scoutsodyssey/ConsumeInput.png)
+
+![type:video](../img/scoutsodyssey/InitialInventorySystem.webm)
+
+For the "E" key pickup mechanic, I incorporated dynamic item size changes based on the duration of key holding to provide player feedback. Although this caused complications when rescaling items in the editor, the root cause was using relative scale rather than world scale.
+
+The feature was further improved by adding pickup animations, and since the feature was implemented using blueprints, making these iterations was simpler. This experience reinforced my belief in beginning with blueprints for iterative development and later transitioning to C++ for performance enhancement and explicit design.
 
 ## Scene Performance
 
