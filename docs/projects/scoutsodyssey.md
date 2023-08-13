@@ -28,9 +28,8 @@ To implement this, I chose a behaviour tree approach. It aids debugging (showing
 
 Initially, I designed it to be component-based. Each speakable actor had a dialogue component, and their individual behaviour trees controlled the dialogue, avoiding unnecessary dependencies. I realized this design in C++ after prototyping with blueprints. The component spawned UI elements based on behaviour tree tasks. You can find the UML of the component below. 
 
-![UML](../img/scoutsodyssey/DialogueSystemUML.png)
-
-![DialogueTree](../img/scoutsodyssey/DialogueTree.png)
+![uml](../img/scoutsodyssey/DialogueSystemUML.png){: style="display: inline-block;width:49%;"}
+![tree](../img/scoutsodyssey/DialogueTree.png){: style="display: inline-block;width:49%;"}
 
 I created two behaviour tree tasks: "choice" and "speak," executed sequentially. The chosen node had options that determined if the player or NPC was speaking, positioning the UI accordingly. As only speakable actors held the component, they would be the second speaker, and the speech bubble would spawn at their location. 
 
