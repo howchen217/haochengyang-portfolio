@@ -7,9 +7,13 @@ Scouts' Odyssey is a narrative puzzle adventure I developed for The Chinese Room
 
 In the game, you play as a young scout living out your scout leader's campfire story in your imagination. Because it's all in your head, you can change the environment around you, which helps you solve the challenges presented. The game mixes traditional puzzle elements (like collecting items and using them in the environment) with a cool twist – you can change the environment itself while you play.
 
+![type:video](../img/scoutsodyssey/ScoutsOdyssey_GreenHouse.webm)
+
 I was responsible for most gameplay systems, while the other programmer focused on technical art. Overall, I implemented the dialogue system, inventory system, scene performance, and AI for animated characters. I also made tools to make debugging easier. In the upcoming sections, I'll explain the problems I faced and how I tackled them.
 
 ## Dialogue System
+
+![type:video](../img/scoutsodyssey/ScoutsOdyssey_Dialogue.webm)
 
 The dialogue system in Scout's Odyssey needed two main functions: speech and choices. Initially, I created a blueprint where the dialogue box always appeared at the bottom. The UI switched between displaying text (for speaking) and a list view (for choices). Each character had a profile picture for identification. It was easy to implement, given all character dialogues share the exact UI. However, this approach clashed with our game's focus on environmental art. Covering a large part of the screen with a bottom text box wasn't suitable. We also wanted real-time scene performances, like shaking environments when a character shouts or the narrator comments on player actions.
 
@@ -50,6 +54,7 @@ In hindsight, starting with a rapid blueprint prototype and later transitioning 
 
 ## Inventory System
 
+![type:video](../img/scoutsodyssey/ScoutsOdyssey_PickUp.webm)
 
 Implementing the inventory system was relatively straightforward, thanks to my familiarity with gameplay tags and data assets from a previous project, Afterville. I chose to use gameplay tags for object identification rather than enums. This choice allowed for easy extension in the editor without requiring code changes. Designers could create items without needing programmer involvement. Items were represented by unique gameplay tags within data assets. The inventory itself was designed as an attachable component applicable to any actor.
 
@@ -65,9 +70,15 @@ The feature was further improved by adding pickup animations, and since the feat
 
 ## Scene Performance
 
+![type:video](../img/scoutsodyssey/ScenePerformance.webm)
+
 
 
 ## AI for Animated Actors
 
+![type:video](../img/scoutsodyssey/ScoutsOdyssey_Squirrels.webm)
+
+
 
 ## Conclusion
+
