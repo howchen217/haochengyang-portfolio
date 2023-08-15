@@ -79,3 +79,7 @@ To complement the Stamina System, I also have to implement actions that the play
 Creating Stamina Actions also led me to explore the Unreal sequencer system, by which you can create animations. I needed a fadeout effect to give players the illusion of time passage. Ultimately, I had to simultaneously utilize two types of sequencers: the level sequencer for the general level and the sequencer for UI display. I trigger them in tandem to play a camera fade out and UI text fadeout. 
 
 ![img](../img/afterville/FadeOut.png){: style="width:80%"}
+
+## Conclusion
+
+Trying to develop an entire game in Unreal is daunting (to the point our team is the only one in the master’s course that used it) but also infinitely more rewarding than just sticking to things I already know. I have adapted to the unreal gameplay framework and understood its quirks and the differences from Unity. In some ways, I am thankful that it forces a safe architecture instead of how Unity is more or less a blank slate. Its API was complex and verbose at first glance (and sometimes because it is complex and verbose). Still, once you get used to it, you start appreciating the level of customization it offers. After all, you have access directly to the engine’s source code. I will continue practising with Unreal and potentially explore its multiplayer aspects in the future.   

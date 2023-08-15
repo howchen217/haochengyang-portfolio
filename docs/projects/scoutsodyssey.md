@@ -1,5 +1,7 @@
 # Scouts Odyssey
 
+May 2023 - September 2023
+
 Scout's Odyssey is a narrative puzzle adventure I developed for The Chinese Room as my final master's project. Our team consisted of ten members: one producer, two programmers (myself and another focusing on technical art), three designers, three artists, and an audio expert. We worked for about four months, from May 2023 to September, to create a complete puzzle level.
 
 **Code base:** link available soon.<br />
