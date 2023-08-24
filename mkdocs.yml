@@ -47,6 +47,9 @@ theme:
       primary: indigo
       accent: lime
 
+extra_css:
+  - css/style.css
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true

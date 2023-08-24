@@ -16,6 +16,16 @@ developer. My self-developed game has
 received a 4.6 rating on the Google Play
 Store.
 
+## Testimonials
+
+<div class="container">
+  <img src="img/Ruth.jpeg" alt="Avatar" style="width:100px">
+  <p><span><b>Dr. Ruth Falconer</b></span>Head of Division, Games Technology and Mathematics, Abertay University</p>
+  <p>
+  I wholeheartedly endorse Haocheng Yang. He has excellent problem-solving skills which he employed on our research project where he was working with emerging games technology that had little documentation.  He was creative in his approach to research bringing fresh insights to the team. What truly stands out is Haocheng’s ability to excel independently, a trait that showcases his dedication and self-motivation. Beyond his impressive technical skills, Haocheng is incredibly helpful and personable, making collaboration a joy. 
+  </p>
+</div>
+
 ## Featured
 
 Currently working on lion dancer for Transfuzer 2023, a boss-rush arena fighter, as well as Scouts' Odyssey, a narrative puzzle game as a master's final project.
