@@ -4,8 +4,8 @@ May 2023 - September 2023
 
 Scout's Odyssey is a narrative puzzle adventure I developed for The Chinese Room as my final master's project. Our team consisted of ten members: one producer, two programmers (myself and another focusing on technical art), three designers, three artists, and an audio expert. We worked for about four months, from May 2023 to September, to create a complete puzzle level.
 
-**Code base:** link available soon.<br />
-**Recent build:** [game build link](https://drive.google.com/file/d/1pZ5tGrkTKZM9uGcTLOG0YNbTUz1beL27/view?usp=sharing)
+**Code base:** [code base link](https://github.com/howchen217/ScoutsOdyssey)<br />
+**Final build:** [game build link](https://drive.google.com/file/d/1mxiD-JvEcYLfu0cJ3gvpo_eS8Wd3szIn/view?usp=sharing)
 
 In the game, you play as a young scout living out your scout leader's campfire story in your imagination. Because it's all in your head, you can change the environment around you, which helps you solve the challenges presented. The game mixes traditional puzzle elements (like collecting items and using them in the environment) with a cool twist – you can change the environment itself while you play.
 
