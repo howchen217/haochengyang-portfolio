@@ -133,9 +133,13 @@ void APropActor::BeginPlay()
 }
 ```
 
-In addition to these task nodes, I integrated all dialogue and interactions into the game. It required implementing various events, such as initiating dialogues at specific moments or triggering AI behaviour. Initially, referencing actors and assigning delegates between them created dependencies and made debugging complex. A breakthrough came when I recognized the potential of the level blueprint. Setting delegates there, where references from all actors in the scene are available by default, proved cleaner and centralized. This approach allowed quick identification of any delegate issues. I'll undoubtedly apply this method in future projects.
+In addition to these task nodes, I integrated all dialogue and interactions into the game. It required implementing various events, such as initiating dialogues at specific moments or triggering AI behaviour. Initially, referencing actors and assigning delegates between them created dependencies and made debugging complex. A breakthrough came when I recognized the potential of the level blueprint. Setting delegates there, where references from all actors in the scene are available by default, proved cleaner and centralized. This approach allowed quick identification of any delegate issues. 
 
-![ConsumeInput](../img/scoutsodyssey/LevelBP_SignPostEventBind.png)
+![EventBind](../img/scoutsodyssey/LevelBP_SignPostEventBind.png)
+
+However, just using delegates still doesn't achieve real decoupling between actors. After having an industry programmer review my method, I realized my misunderstanding regarding delegates. Still needing another actor's reference to assign events is not much different from calling the other actor's method. Using delegates does not automatically decouple your code. You must manually create an event system structure, using events as a middleman between the event provider and the subscriber. Only then can you achieve decoupling between the provider and subscriber. The only thing they share in common is the event, and neither knows about the other. It simplifies the hard-to-maintain n-n relationships to n-1 and 1-n. You pass data through the channel of the event, and neither the provider nor the subscriber have access to each other. I am glad I caught my crucial misunderstanding about delegates, and I will definitely create my own event systems in the future.
+
+![EventSystem](../img/scoutsodyssey/EventSystem.png)
 
 ## AI for Animated Actors
 
@@ -213,6 +217,12 @@ However, one thing to note, you need to use GetOwner()->GetName() to print the a
 
 #define LOG_ERROR(Text) 		 UE_LOG(LogTemp,Error,TEXT("%s: %s"), *CUR_CLASS_FUNC_LINE, *FString(Text))
 ```
+
+## Loading Screen
+
+I worked on the game's loading screen just before delivering the gold version of the build. Having never done this before, I referred to online resources. However, I realized that most of them displayed fake loading screens with delays rather than an actual loading screen that allows level loading in the background. After conducting further research, I discovered utilizing Unreal's level streaming system was necessary. I created a level to display the loading screen and placed it in the same master level as the game level I wanted to load. When players switch levels from the start menu, they are loaded into this master level, and the loading screen immediately appears since it can be loaded instantly. At the same time, the game level begins loading, and once it's fully loaded, the loading screen menu is unloaded. This approach ensures that the game level loads in the background while the loading menu is displayed, avoiding the use of a fake loading screen, which can result in a period of empty screen and break player immersion.
+
+![LevelLoading](../img/scoutsodyssey/LevelLoading.png)
 
 ## Conclusion
 
