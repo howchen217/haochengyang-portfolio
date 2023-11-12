@@ -46,3 +46,7 @@ Now also available on Steam.
 
 2023 Hypergryph Coreblazer, "Distinguished Excellence Award for Extraordinary Cultural Innovation in Gaming"
 
+2023 Tencent University Game Creative Production Competition, "Innovation Award for Best Traditional Cultural Game"
+
+![tencent award](img\liondancer\tencent2023Award.png){: style="height:180px;width:120px"}
+
