@@ -1,14 +1,14 @@
 # Therapet
 
-A AR game where you interact with an augmented reality dog, play fetch with it, feed it food, and ask it to follow you or sit down. 
+March 2023 - Present
 
-I am the programmer responsible for the dog’s AI and behavior. 
+A mixed reality project I worked on as a research assistant at Abertay University, initially collaborating with one other programmer and later working independently. I created a realistic virtual pet that can be interacted with in an Augmented Reality passthrough and developed its AI, decision-making, and related functionalities. The project initially targeted Hololens 2, and subsequently, I ported the application to Meta Quest Pro, incorporating features such as voice commands, hand gesture commands, and eye-tracking capabilities.
 
-I implemented:
-Interactable dog that reacts to real-life environment
-Dog AI behavior such as Fetching, Feeding, Sit, Stand
-Procedural animation for the dog
-Ragdoll interaction where player can pet and move dog's head
-Game Download: requires Hololens 2
+**Code base:** private to university<br />
+**Game download:** private to university
 
-Project Repository: private, a work project
+We looked to create a therapeutic experience where the user can immerse themselves in interacting with a virtual pet, imitating how therapy dogs are used to reduce student stress during exam season.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C_hJA7-jKCI?si=zcUUGMLGLVmCmfrF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Much like iterative game development, every aspect of the research application was subject to change, not only because it was ported to a different headset. User studies can always reveal previously unaccounted behaviours to adjust for. For instance, users are much more likely to spawn a room full of pets once they no longer have to use voice commands to summon dogs. Instead, they can spawn them with the click of a button on a floating menu.
