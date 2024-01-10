@@ -1,0 +1,1537 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://howchen217.github.io/haochengyang-portfolio/devlogs/immersivesimsautonomy/">
+      
+      
+        <link rel="prev" href="../../projects/therapet/">
+      
+      
+        <link rel="next" href="../crusaderkingsmodders/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>What creates the sense of autonomy in immersive sims? - Haocheng Yang - Game Developer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-creates-the-sense-of-autonomy-in-immersive-sims" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Haocheng Yang - Game Developer" class="md-header__button md-logo" aria-label="Haocheng Yang - Game Developer" data-md-component="logo">
+      
+  <img src="../../img/HaochengIcon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haocheng Yang - Game Developer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              What creates the sense of autonomy in immersive sims?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/scoutsodyssey/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Devlogs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Haocheng Yang - Game Developer" class="md-nav__button md-logo" aria-label="Haocheng Yang - Game Developer" data-md-component="logo">
+      
+  <img src="../../img/HaochengIcon.png" alt="logo">
+
+    </a>
+    Haocheng Yang - Game Developer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unreal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Unreal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/scoutsodyssey/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scouts Odyssey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/afterville/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Afterville
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unity
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/liondancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lion Dancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/mallcop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mall Cop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/kamukchi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kamukchi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/dialbforbee/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dial B for Bee
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/aforaletta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A for Aletta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    XR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            XR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/therapet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Therapet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Devlogs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Devlogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    What creates the sense of autonomy in immersive sims?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    What creates the sense of autonomy in immersive sims?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-are-immersive-sims" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 What are Immersive Sims
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-immersive-sims-are-systemic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Immersive Sims are systemic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-immersive-sims-do-not-limit-player-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Immersive Sims do not limit player choice
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-creates-the-sense-of-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 What creates the sense of autonomy?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 What creates the sense of autonomy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-does-the-lack-of-failure-state-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Does the lack of failure state create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-does-games-setting-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Does game’s setting create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-does-games-themes-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Does game’s themes create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-do-character-upgrades-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Do character upgrades create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-does-the-games-reactivity-create-autonomy-possibility-space-illusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Does the game’s reactivity create autonomy? (possibility space illusion)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-does-the-games-systemic-nature-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Does the game’s systemic nature create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-does-being-rule-driven-instead-of-goal-driven-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 Does being rule-driven instead of goal-driven create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-does-freedom-of-exploration-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 Does freedom of exploration create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-does-physics-simulation-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 Does physics simulation create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-does-direct-manipulation-create-autonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.10 Does direct manipulation create autonomy?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crusaderkingsmodders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reasons Behind Crusader Kings’ Loyal Modders: An Analysis on Crusader Kings’ Modding Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creatingfeints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating feints with animator transitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="what-creates-the-sense-of-autonomy-in-immersive-sims">What creates the sense of autonomy in immersive sims?</h1>
+<p>Oct, 2022</p>
+<h2 id="1-introduction">1 Introduction</h2>
+<p>Games such as Deus Ex and dishonoured grant players incredible freedom, an autonomy not felt in any other games.
+They classify as immersive sims, which have existed for almost three decades. This paper will explore the genre from a
+mechanics level to discover what creates that autonomy, helping designers increase autonomy in their games.</p>
+<h3 id="11-what-are-immersive-sims">1.1 What are Immersive Sims</h3>
+<p>To explore autonomy, we must understand what defines the
+immersive sim genre. This genre has a linking history. Almost every immersive sim title can be traced back to a single
+studio and one key figure. The studio is Looking Glass, and
+the figure is Warren Spector, who coined the term immersive
+sim (Spector, 2003);</p>
+<p>The lineage of Immersive Sims began in 1992. Warren
+Spector directed the first game title to be considered an immersive sim, Ultima Underworld: The Stygian Abyss. It was
+a first-person RPG by Blue Sky Productions, which later became Looking Glass Studios (Davidson, 2009). It featured
+many groundbreaking game concepts that were never seen
+before, such as emergent gameplay and interlinking systems.
+The player did not have to follow a linear path; Objectives
+can be approached without pre-scripted solutions. It was the
+inspiration for many other immersive sims to come, such as
+System Shock, Thief, and Deus Ex. All of them follow a similar design ethos as Ultima Underworld. As Looking Glass
+Studio slowly disbanded, its members separated into different companies while propagating the same school of thought.
+The disbandment led to the formation of Irrational Games,
+Arkane Studios, and Ion Storm. Each with their take on the
+immersive sim, yet still paying respect to their root (Mahardy,
+2015). Their design philosophy has also influenced popular
+modern titles, such as Zelda: Breath of the wild and the Hitman series.</p>
+<h3 id="12-immersive-sims-are-systemic">1.2 Immersive Sims are systemic</h3>
+<p>The first characteristic that sets immersive sims apart from
+other games is its system-driven, interactive gameplay. Immersive sims are all systemic, where their game systems are
+interrelated. In Zelda: Breath of the wild, the weather, elemental, and combat systems are seamlessly tied together.
+Wooden weapons can be set on fire to deal enemies fire damage and burn anything wooden. It will then also be put out if
+the world rains. Deus Ex’s stealth system interacts with sound
+and AI. The player can shoot the wall with a silenced pistol
+to create a diversion, as the enemy will react to the sound
+created by the pistol. However, they will not notice where it
+came from as firing does not make a sound. The sound serves
+as a layer of abstraction.</p>
+<p>This layer of abstraction serves to make the connection between systems organic. In the above example, sound works
+as a medium, so the enemy does not need to react to every action the player makes, just the sound. Similar sound-making
+events would trigger similar enemy AI reactions, such as
+throwing a bag of chips down the stairs. The co-directors
+at Arkane Studios, Harvey Smith and Raphael Colantonio,
+call these systems General Purpose Systems. The systems
+react to stimuli instead of having direct links between each
+other(Smith &amp; Colantonio, 2013). Any entity can therefore
+react to any other entity as long as that entity generates a
+stimulus it listens to. For instance, a door listens to explosive damage. Therefore, it does not matter if the player blows
+it open or if he incites a guard to throw a grenade at the door.
+This kind of organic connection between systems encourages
+multiple solutions to the same problem, which is related to
+the second characteristic.</p>
+<h3 id="13-immersive-sims-do-not-limit-player-choice">1.3 Immersive Sims do not limit player choice</h3>
+<p>The second characteristic of immersive sims is that they encourage player agency and choice. It can be player improvisation, branching story choices, or the game reacting to the
+player’s input-level actions (Smith &amp; Colantonio, 2013).</p>
+<p>The choices are partly generated by the game’s systemic
+nature and partly from the design philosophy. Immersive
+Sims differ from other genres because of this. Zelda: Breath
+of the wild, for example, have all the system in place for
+an Immersive Sim but contradicts the ethos in certain areas.
+Colantonio addressed how he would approach certain parts of
+the game differently if he were to push it more in the direction of an immersive Sim. For instance, the game forces the
+player to enter Gerudo town through the front door instead of
+giving players other options (MinnMax, 2021).</p>
+<p>Immersive sims also only sometimes directly present the
+players with choices, even if the choices are narrative based.
+It reacts to player actions instead, down to the immediate input level, as those actions echo upward into the very plot of
+the game (RPS, 2014). For example, in Deus Ex, the game
+would react if the player shoots a soldier or wanders into the
+ladies’ restroom. Alternatively, it matters whether to kill the
+target or not in Dishonoured. However, there is a limit on how
+much this can be pushed, as it is impossible to accommodate
+every possible player action. There is no time or resources
+to write a different scenario every time if the player keeps on
+killing mission-related NPCs, for instance.</p>
+<h2 id="2-what-creates-the-sense-of-autonomy">2 What creates the sense of autonomy?</h2>
+<p>Many games have a sense of autonomy, which is difficult to
+define. Down to the personal level, it is a feeling of freedom.
+While your actions have repercussions, they are your choices
+instead of being enforced by the game. One quote from Warren Spector gives some insight into why immersive sims create a sense of autonomy. ”The game was conceived with the
+idea that we’d accept players as our collaborators, that we’d
+put power back in their hands, ask them to make choices,
+and let them deal with the consequences of those choices
+(Spector, 2003).” Unlike most games, Immersive sims wish
+to let go of the player’s hand. It has player autonomy as the
+goal, and every game mechanic is in place in service of that
+goal.</p>
+<p>Therefore, to understand where this sense of autonomy
+comes from, it is important to break the games down to the
+mechanics level and analyze how each mechanic contributed.
+Not all immersive sims share the same mechanics, and some
+have innovated as time went on. Those will be included as
+well.</p>
+<h3 id="21-does-the-lack-of-failure-state-create-autonomy">2.1 Does the lack of failure state create autonomy?</h3>
+<p>In Immersive Sims, there are usually no failure states except
+death. In Deus Ex, the player can kill plot crucial characters
+early on, such as Anna Navarre, and it doesn’t trigger a failure
+state. In hitman, it does not matter how big of a scene you
+make; you will need to deal with it as the game continues.
+You are only given one grand objective, and no actions of
+yours regarding achieving that outcome are enforced. This
+property leads back to Colantonio’s critique of Breath of the
+wild, by which the game forces you to enter Gerudo Town
+through the front gate (MinnMax, 2021).</p>
+<p>This mechanic creates autonomy, as it imitates the autonomy of real life. It speaks more to its identity as a simulation.
+Nothing is enforced, and the player is given free rein on their
+actions. That is, aside from dying - the sole ”failure state”
+in real life. In real life, you do not get a chance to start over
+on a mission failure. Therefore, the simulation continues in
+Immersive Sims, and the player is left to deal with the aftermath. By placing no arbitrary limits on the player, it, in turn,
+generates autonomy.</p>
+<p>However, you do not have as much autonomy in real life
+compared to Immersive Sims. You can’t oppose the law on
+a whim and get away with it like in Dishonoured. You will
+not infiltrate someone’s home and steal their valuables like in
+Thief. In real life, our autonomy is very much constrained
+by law and order. We do not live in a world where we can
+choose things outside the social norm. Therefore, having a
+true-to-life simulation will not necessarily grant you autonomy, despite that is what the lack of failure state tries to imitate. This leads to the next point, where the game does not
+have to imitate real life - the game’s fictional setting.</p>
+<h3 id="22-does-games-setting-create-autonomy">2.2 Does game’s setting create autonomy?</h3>
+<p>As mentioned before, laws and social norms limit our autonomy in real life. Unless an outlaw or a social outcast, we will
+not willingly break the law or directly oppose the social norm.
+That is where the game’s setting comes in.</p>
+<p>Almost all immersive Sims take place in a dystopian world
+or mark the player an outlaw. Sometimes both, as in the case
+of Dishonored. In Deus Ex, you are an agent who works for a
+government agency with jurisdiction beyond individual country limits, and whatever you do will be cleaned up. In Ultima
+Underworld, you are thrown into the abyss, a place of monsters and outcasts, where laws do not exist. In Thief, you are
+an outlaw. In all these situations, there is no law, or laws do
+not have restraining power.</p>
+<p>Many non-Immerisve Sims also use the game’s setting to
+create autonomy. Fallout games all happen post-apocalypse,
+where the morals are blurred. The Beholder games happened
+under a totalitarian regime, where everyone was for themselves. Despite not being immersive sims, their settings grant
+the players freedom to act.</p>
+<p>You can create autonomy in any game by granting the game
+a setting where laws and orders are defunct. Immersive Sims
+usually inject this idea into the game’s theme as well, which
+is the topic of the next section.</p>
+<h3 id="23-does-games-themes-create-autonomy">2.3 Does game’s themes create autonomy?</h3>
+<p>Immersive Sims likes to re-contextualize the player’s relationship with the world, theme-wise. It is too common of
+a design trope in these games to ignore. In Deus Ex and Dishonoured, the player starts from a good side. Nevertheless, as
+time goes on, that side is revealed to be corrupt, and the player
+is forced to choose. In System Shock, your initial guide is
+discovered to be dead when the main villain SHODAN is revealed, and everything you knew before is out of the window.
+In Bioshock, the player discovers that he had functioned as
+a puppet without a will, an instrument to end someone’s life.
+His whole existence had been an elaborate lie.</p>
+<p>Through re-contextualization, the player now assumes a
+role they can choose, a thematic choice that would decide
+how the game’s ending plays out. This places the player in
+a position of autonomy. Deus Ex is the only one that integrates it into the game well, with its system of multiple routes
+and outcomes. You can support multiple factions, each with
+its own ending. The game was initially planned to have one
+more end, with the player siding with the villain. It was only
+scrapped because of lack of time (Deus Ex, 2015). Bioshock
+and Dishonoured also have choices, but because of their linear gameplay, they will not dramatically change the plot.</p>
+<p>From Warren Spector’s account, Immersive Sims are conceived to grant players thematic choices that can impact the
+game’s outcome. The games’ autonomy would benefit from
+having RPG elements like Fallout: New Vegas. However,
+they are usually downplayed due to how costly Immersive
+Sims are already to make.</p>
+<p>The player is also usually a moderating force. They are
+placed in a situation where their actions would greatly impact
+the world. Bioshock’s Jack is the key to ending the war, and
+Morgan from Pray is the only person in the position of saving
+the spacing station. In Dishonored, you have the skill to take
+out the leader of enemy factions single-handedly.</p>
+<p>In all the above cases, the player is also given a special power, making them more adept than others at enacting change. For instance, System Shock’s cyber modules,
+Bioshock’s plasmids, Dishonored’s void abilities, and Prey’s
+Neuromods. This can be a genre trope, but it can also give the
+player more autonomy over others in the fictional setting. Not
+only do you go beyond the confines of the law, but you also
+have special abilities that distinguish you from the masses.
+Some of the Immersive Sims also play with this trope, for
+example, the Bioshock Series. Your freedom is an illusion;
+Either you weren’t aware that you were a puppet, or your
+choices turn out not to matter.</p>
+<h3 id="24-do-character-upgrades-create-autonomy">2.4 Do character upgrades create autonomy?</h3>
+<p>As mentioned before, you are usually given special abilities.
+However, you need to decide what to choose, as the choices
+are usually limited. In Deus Ex, your body has limited slots
+to place upgrades. In Prey, the upgrade materials are difficult to come by, so you are forced to make decisions about
+what would decide your playstyle. This is also the case in
+Bioshock, where only a few abilities can be equipped.</p>
+<p>This can be extended to weapon and inventory upgrades as
+well. You are granted a range of weapons where you can only
+upgrade a few. Your choices can be further limited based on
+what you can bring, as games like Deus Ex and Prey limit
+your inventory space. The games give you the freedom to
+choose but also force you to make choices due to the lack of
+resources.</p>
+<p>The limitation of your choice can be a necessary design decision to not subject players to the paradox of choice. When
+we are given an overwhelming number of choices, we actually lose our autonomy rather than gaining it (Schwartz,
+2014). The upgrade path limits the number of options we
+need to consider by pushing you down a single path for this
+particular playthrough and still allowing you to try them in
+subsequent playthroughs. When facing too many choices, the
+player is likely to stop choosing altogether, similar to consumer behaviour. When faced with too many options, they
+will not choose at all (Kinjo &amp; Ebina, 2015). Autonomy is
+gained through player action; therefore, it is necessary to encourage players to make choices by giving them less rather
+than more. Despite seeming like a paradoxical design choice,
+Limiting player upgrades improve player autonomy.</p>
+<h3 id="25-does-the-games-reactivity-create-autonomy-possibility-space-illusion">2.5 Does the game’s reactivity create autonomy? (possibility space illusion)</h3>
+<p>Immersive Sims also try to integrate player agency into multiple levels of play, which the game world will react to accordingly. The Narrative level reflects it by changing the story
+based on player choice. The progression level reflects it by
+changing the player’s approach based on how they have upgraded their characters (RPS, 2014). These two levels of the
+player agency are not exclusive to Immersive Sims. Games
+like Skyrim and Far cry have already implemented such elements. Immersive Sims stand out because they allow the
+game to react to the player’s input-level decisions.</p>
+<p>The game’s reactions to the player’s input-level actions expand the possibility space of what the player can impact.
+While this does not necessarily give the player more autonomy, it creates the illusion that the world is more than just a
+game. It becomes more of a virtual space than something under the confines of mechanics. Ultima underworld does this
+by giving you options to interact with the world; see, grab,
+speak to, and unlock. You need to find out which interaction
+might work and which does not. Despite knowing that speaking to a wall might not lead to meaningful reactions, you still
+do it because that is within the possibility space. Deus Ex also
+encourages you to explore every corner of the space because
+of its input-level reactivity. You do not know what might happen if you enter the ladies’ restroom - which ends up being
+remarked upon by your boss. It’s like how Undertale’s flowery remarks on your choice of killing Toriel and reloading the
+game. The actions you assumed would never get noticed are
+brought to your attention. Suddenly, there are implications
+behind every possible choice you make; the lines between
+game and simulation are blurred.</p>
+<p>The game’s reactivity creates the illusion that every
+player’s choice is potentially meaningful. This makes the
+player feel more autonomous as now they have a larger possibility space to explore.</p>
+<h3 id="26-does-the-games-systemic-nature-create-autonomy">2.6 Does the game’s systemic nature create autonomy?</h3>
+<p>Being systemic is the main criterion for Immersive Sims, as
+it is crucial for its identity as a simulation. Deus Ex, Dishonoured and Prey are more true to this aspect. At the same
+time, the Bioshock series have simplified such mechanics and
+provided more rigid combinations. This directly resulted in
+less possibility of approaches and less emergent gameplay. In
+Bioshock Infinite, vigors can be used together but do not go
+beyond their intended uses. For example, you can wet the enemies with Undertow and use Shock Jockey to electrify them
+together, but that is not connected to other systems. Magika
+suffers from the same issue. Systems without a layer of abstraction fail to provide the organic complexity that makes a
+game systemic.</p>
+<p>Systemic games are emergent, and this creates unintentional solutions. The world functions under consistent rules
+instead of scripted events. Therefore, the player can do unorthodox things to achieve their goal. In Breath of the Wild,
+the player can skip segments directly by using metal weapons
+such as an electric conductor. In Prey, the player can turn into
+an object and get through tiny gaps.</p>
+<p>Having unintentional solutions creates a rare dynamic
+where the players are not subjected to the game designer’s
+will but can enforce their own will. The possibility of what
+they can use to approach the same problem opens up, and
+they are not punished for trying things differently. This goes
+for other games as well. In the early levels of Baba is you,
+puzzles usually have multiple solutions, and that made it fun
+to see the game fall apart under your control. However, the
+later levels are all designed to be single-solution. While it increased the game’s difficulty as a puzzle game, it took away
+the player’s autonomy.</p>
+<p>The game can also make the unintentional seem intentional. This speaks of the design of the game. For example,
+Prey and Dishonored were designed to have their elements organically combine. Stop time and possession enables you to
+have enemies killed by their own bullets. Remote manipulation and leverage work together to make the player a boulderthrowing machine. To the player, these combinations emerge
+naturally from the systems and require their proper employment. It can also extend into a wide range of other systems,
+which makes the player more autonomous as they need to pay
+attention to the relationship of what they do with the world.
+Every action of theirs has a rippled effect and changes how
+the game can be played.</p>
+<h3 id="27-does-being-rule-driven-instead-of-goal-driven-create-autonomy">2.7 Does being rule-driven instead of goal-driven create autonomy?</h3>
+<p>All Immersive Sims are rule-driven as opposed to goaldriven. Their gameplay is never scripted. The players are
+not given clear targets to progress through. Instead, they are
+given one grand objective and are tasked with finding an approach that works.</p>
+<p>By being rule-driven, Immersive Sims will have emergent
+gameplay as opposed to one focused on progression (Juul,
+2022). It is a clear-cut way of creating player autonomy, as
+the player must form strategies to solve the problems. The
+game can now be replayed in different ways. In Breath of the
+wild, You can face the final boss at any point in the game.
+Whether without preparation or with reliance on gear and
+weapons. Whichever way is free for the player to decide.</p>
+<p>Being rule-driven also gives players the freedom to alter
+the game itself, whether to play it differently or with modified rules. For instance, rule-driven games can always be
+speedruned, as ways of approach can continuously be refined,
+or other more efficient strategies might emerge. In the case of
+speedrunning, the player changes the game’s objective, as finishing the game faster is now the game’s goal. The player can
+also subject arbitrary rules on themselves, like having handicaps in chess, for example, by not killing anyone in Deus Ex.
+This is creating a brand new game out of the original rule set.
+The player has autonomy within the game and to change up
+the game.</p>
+<h3 id="28-does-freedom-of-exploration-create-autonomy">2.8 Does freedom of exploration create autonomy?</h3>
+<p>Immersive Sims encourage exploration. It can be through interesting audio logs littered around the world like Bioshock
+or out of necessity for resources like Prey. Deus Ex even rewards you explicitly by granting you experience points when
+you enter hidden areas. It’s not without reason that exploration is the main focus of these games.</p>
+<p>Exploration aids the player in many ways. It helps the
+player develop strategies. They can obtain upgrades, find hidden weapons and acquire useful information. In turn, the
+player discovers better ways to approach the current challenge. It also helps immerse the player through environmental
+storytelling, settling them in the game’s setting. The ease of
+navigation can induce a sense of freedom in the player, for
+instance, how you can blink to areas in Dishonored. Combined with stealth, it further grants players autonomy as they
+willfully explore areas they should not be in. The pressure of
+being discovered makes their actions much more deliberate.</p>
+<p>However, giving the player more to explore does not necessarily increase autonomy. Almost all Immersive Sims place
+the player in isolated levels, which limits the player to a finite area. The map size did not make exploration in Deus Ex
+or Dishonored less attractive, as the carefully designed levels packed the discoveries with content and meaning. There
+is always something carefully placed to find. Because the
+player was not told it was there, every discovery felt fresh.
+The bad open-world games have subpar exploration despite
+being open-world because they litter the map with copy-paste
+objectives. It takes away the player’s autonomy as they are
+told what is there, making it a list to check off. These objectives are also the same event in different locations, taking
+away their meaning.</p>
+<p>Does that mean Immersive Sims will not benefit from a
+larger map? No. Breath of the wild pulled it off by making every area distinct and exciting to explore. There is the danger
+of choice overload, however, as people find it demotivating to
+pick from too many options(Miron &amp; Brehm, 2006). That is
+why games like Breath of the wild and Fallout: New Vegas
+guide the player with a gentle hand. They make surrounding
+areas harder to explore for new players and encourage them to
+stay on a designed path. They do not take the autonomy away
+from the player, as the players can explore those areas first
+but will likely decide not to due to the difficulty. On a new
+playthrough, they could try again, having had the experience
+they needed.</p>
+<h3 id="29-does-physics-simulation-create-autonomy">2.9 Does physics simulation create autonomy?</h3>
+<p>Physics is part of the identity of Immersive Sim. From the
+first title to be considered an Immersive Sim, Ultima Underworld: the stygian abyss already had crude physics simulation. It had only gotten more sophisticated as time passed,
+from dropping boxes in Deus Ex to telekinesis in Bioshock.
+It creates autonomy by expanding the possibility space.</p>
+<p>Integrating physics into the game’s systems creates
+chances for emergence. Enemies can be pushed or damaged
+by falling items; their bodies can be dragged around to be
+hidden. It generates organic interactions that only physics
+can provide, like how Gang Beasts compare to a typical fighting game or how Totally Accurate Battle Simulator enacts its
+battles. Unexpected and emergent, but at the same time functioning under consistent principles. It also ties into other systems, like the stop-time mechanic in Zelda and Dishonoured.
+Physics functions the same way other systems do and is just
+one of the many that make the simulated space believable.</p>
+<p>Therefore, Physics simulation also creates autonomy like
+other systems. It expands the possibility space and adds one
+more tool to the player’s belt. It enables them to pay attention
+to how it ties into other systems, creating opportunities for
+organic interactions that the players can induce.</p>
+<h3 id="210-does-direct-manipulation-create-autonomy">2.10 Does direct manipulation create autonomy?</h3>
+<p>Another quality that’s the same across all immersive sims is
+being first-person, and the player can directly manipulate the
+play space. Ultima Underworld gives players interactive options that provide immediate feedback. Deus Ex or Dishonoured give you direct button controls, each representing an
+immediate action. Shoot, crouch, run. This difference distinguishes Immersive Sim’s simulation from other simulation
+games like Crusader Kings and the Sims. One focuses more
+on making the player take on the protagonist’s identity; the
+other makes the player view the simulation as an outsider.
+One for immersive role-play, and the other a digital dollhouse
+(Fernndez-Vara, 2015).</p>
+<p>Direct manipulation makes players feel more autonomous
+by making their actions in the world immediate. The players
+are given direct feedback for their actions, integrating them
+as a part of the fictional world. It creates immersion and the
+illusion that the player is the protagonist. Suppose the player
+believes they are the game’s avatar. In that case, they can
+act more autonomously within the game, for they can directly
+affect what happens, therefore, enforce their own will. With
+indirect manipulation, what they do is limited by the game’s
+UI and what options are available to the player.</p>
+<p>Direct manipulation can also be limited by reducing the
+player’s options and emphasizing too much on mechanics.
+This can easily break immersion. In Thief 2014, you can only
+shoot ropes to specific targets rather than any wooden surface, like in the previous games, taking away autonomy from
+the player. This is also how the climbing mechanics feel in
+the new Tomb Raider games, where the player has much less
+choice on input-level decisions. In the original Tomb Raider
+games, the control is direct and complex. This makes the
+player feel they are doing the climbing and making mistakes
+instead of feeling frustrated by what the game’s mechanics
+did not provide.</p>
+<p>Direct manipulation immerses the player, making them responsible for all their actions, creating autonomy. It also expands the possibility space, as what can happen is not told to
+the player through a menu screen. The less direct the control
+is, the more limiting it feels to the player.</p>
+<h2 id="3-conclusion">3 Conclusion</h2>
+<p>In conclusion, Immersive Sims create autonomy in three main
+ways: expanding the possibility space, immersing the player,
+and giving autonomy directly.</p>
+<p>The expansion of possibility space grants player autonomy
+by making every player action meaningful, making players
+feel they have a greater impact in the game world. This can
+be done by reacting to their actions down to the input level,
+having systems organically interact with one another and creating emergent events. The player can form creative strategies never seen before, and everything they do has potential
+consequences due to the interactivity of the game systems.</p>
+<p>Moreover, autonomy can be gained by immersing the
+player in a fictional world where they can act autonomously.
+This can be done by situating them in a suitable setting, giving them special powers and placing them in situations where
+they alone need to make the pivotal choice. The player can
+also be further immersed through direct control and first-person.</p>
+<p>Finally, autonomy can also be given to players directly
+through freedom of exploration and upgrades, grand objectives, direct control and lack of failure states. The player feels
+autonomous as they are not subjected to arbitrary limitations.
+They can go anywhere, upgrade their character as they prefer,
+and control the game’s progression. They have direct control of the player character instead of being constrained by
+the UI. They will not be stopped if they try to do things differently. By not taking choices away from them, the players
+gain autonomy. Some trade-offs are necessary to help players
+make decisions. However, that should be the player’s choice,
+such as what upgrades to choose and which area they want to
+explore first.</p>
+<h2 id="references">References</h2>
+<p>Davidson, D. (Ed.). (2009). Well played 1.0: video games,
+value and meaning. Pittsburgh, Pa.: ETC Press.
+(OCLC: ocn429229240)</p>
+<p>Deus Ex. (2015, July). Let’s Play Deus Ex with Warren Spector, Sheldon Pacotti and Chris Norden. Retrieved 2022-
+12-25, from https://www.youtube.com/watch?v=
+aTVBSxnwiCo</p>
+<p>Fernndez-Vara, C. (2015). Introduction to Game Analysis.</p>
+<p>Juul, J. (2022). The Open and the Closed: Games of Emergence and Games of Progression.</p>
+<p>Kinjo, K., &amp; Ebina, T. (2015, May). Paradox of
+choice and consumer nonpurchase behavior. AI
+&amp; SOCIETY, 30(2), 291–297. Retrieved 2022-12-
+25, from https://doi.org/10.1007/s00146-014
+-0546-7 doi: 10.1007/s00146-014-0546-7</p>
+<p>Mahardy, M. (2015, April). Ahead of its time:
+The history of Looking Glass. Retrieved 2022-12-
+21, from https://www.polygon.com/2015/4/6/
+8285529/looking-glass-history</p>
+<p>MinnMax. (2021, August). The One Problem With
+Breath Of The Wild According To Arkane’s Founder.
+Retrieved 2022-12-21, from https://www.youtube
+.com/watch?v=RtOOHmJzmpM</p>
+<p>Miron, A. M., &amp; Brehm, J. W. (2006, January). Reactance Theory - 40 Years Later. Zeitschrift fur¨
+Sozialpsychologie, 37(1), 9–18. Retrieved 2022-12-
+26, from https://econtent.hogrefe.com/doi/
+10.1024/0044-3514.37.1.9 doi: 10.1024/0044
+-3514.37.1.9</p>
+<p>RPS. (2014, December). Dark Futures: Clint Hocking. Rock, Paper, Shotgun. Retrieved 2022-12-22,
+from https://www.rockpapershotgun.com/dark
+-futures-clint-hocking</p>
+<p>Schwartz, B. (2014). The Paradox of Choice - Why More is
+Less.</p>
+<p>Smith, H., &amp; Colantonio, R. (2013). Empowering
+the Player in a Story-Rich World: Co-Directing
+Dishonored. Retrieved 2022-12-21, from
+https://www.gdcvault.com/play/1018062/
+Empowering-the-Player-in-a</p>
+<p>Spector, W. (2003). : Deus Ex. In Postmortems from Game
+Developer. Routledge. (Num Pages: 14)</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Haocheng Yang
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="google.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="google.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="google.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

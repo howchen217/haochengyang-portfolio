@@ -1,0 +1,1580 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://howchen217.github.io/haochengyang-portfolio/devlogs/crusaderkingsmodders/">
+      
+      
+        <link rel="prev" href="../immersivesimsautonomy/">
+      
+      
+        <link rel="next" href="../creatingfeints/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Reasons Behind Crusader Kings’ Loyal Modders: An Analysis on Crusader Kings’ Modding Community - Haocheng Yang - Game Developer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reasons-behind-crusader-kings-loyal-modders-an-analysis-on-crusader-kings-modding-community" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Haocheng Yang - Game Developer" class="md-header__button md-logo" aria-label="Haocheng Yang - Game Developer" data-md-component="logo">
+      
+  <img src="../../img/HaochengIcon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haocheng Yang - Game Developer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reasons Behind Crusader Kings’ Loyal Modders: An Analysis on Crusader Kings’ Modding Community
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/scoutsodyssey/" class="md-tabs__link">
+          
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../immersivesimsautonomy/" class="md-tabs__link">
+          
+  
+  Devlogs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Haocheng Yang - Game Developer" class="md-nav__button md-logo" aria-label="Haocheng Yang - Game Developer" data-md-component="logo">
+      
+  <img src="../../img/HaochengIcon.png" alt="logo">
+
+    </a>
+    Haocheng Yang - Game Developer
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unreal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Unreal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/scoutsodyssey/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scouts Odyssey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/afterville/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Afterville
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Unity
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/liondancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lion Dancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/mallcop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mall Cop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/kamukchi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kamukchi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/dialbforbee/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dial B for Bee
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/aforaletta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A for Aletta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    XR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            XR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/therapet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Therapet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Devlogs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Devlogs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../immersivesimsautonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What creates the sense of autonomy in immersive sims?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reasons Behind Crusader Kings’ Loyal Modders: An Analysis on Crusader Kings’ Modding Community
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reasons Behind Crusader Kings’ Loyal Modders: An Analysis on Crusader Kings’ Modding Community
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-game-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Game Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Game Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-crusader-kings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Crusader Kings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-crusader-kings-modding" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Crusader Kings’ Modding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 Methodology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-grounded-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Grounded theory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-demographic-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Demographic Selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Interview Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Privacy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-open-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Open Coding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-axial-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Axial Coding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-selective-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Selective Coding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Discussion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-process-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Process reflection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-result-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Result reflection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-related-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Related Research
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creatingfeints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating feints with animator transitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="reasons-behind-crusader-kings-loyal-modders-an-analysis-on-crusader-kings-modding-community">Reasons Behind Crusader Kings’ Loyal Modders: An Analysis on Crusader Kings’ Modding Community</h1>
+<p>Nov 2022</p>
+<h2 id="1-introduction">1 Introduction</h2>
+<p>One of the most prominent aspects of Paradox games is its
+player-created content and the sizable modding community
+surrounding its games. The Crusader Kings series, for example, is especially favoured by modders. It has a modding discord server of 6000+ members with 1000+ online. It also has
+5000+ steam workshop mods for a game released two years
+ago.</p>
+<p>Furthermore, Crusader Kings is one of the most modded
+Paradox series. It hosts a majority of famous total conversion
+mods, the Game of Thrones mod, the Princes of Darkness,
+and Elder Kings(Brown, 2022). Modders even update these
+mods across games, from Crusader Kings 2 to 3, utilising the
+new engine and graphics.</p>
+<p>There must be some underlying reason why modders are
+encouraged to create content for Crusader Kings. After all, it
+is time-consuming, and a good reason is needed to start. Discovering the reason can bring insight into building a loyal
+modding community, whether modders mod more for personal or impersonal reasons. Thus, this paper seeks to discover the motivations of Crusader Kings’ modders and analyse the common traits that drew them to Crusader Kings
+specifically.</p>
+<p><strong>The formalised research questions:</strong></p>
+<ul>
+<li>What motivates Crusader Kings’ modders?</li>
+<li>Why are they willing to contribute to the Crusader Kings
+modding community?</li>
+<li>Are there commonalities between their motivations?</li>
+</ul>
+<p>The paper is structured as follows. Firstly, it overviews
+the game, providing backgrounds and gameplay. Secondly, it
+provides a detailed account on the methodology of the research. Thirdly, the results are presented, identifying the
+underlying reasons that motivate Crusader Kings modders.
+Fourthly, The results are discussed, reflecting upon the implications of the research. Finally, a summarisation is given
+to show the answers found during our research.</p>
+<h2 id="2-game-overview">2 Game Overview</h2>
+<h3 id="21-crusader-kings">2.1 Crusader Kings</h3>
+<p>Crusader Kings is a series of grand strategy games developed by Paradox, with currently three games in the series.
+Its first title, Crusader Kings, was released in 2004, following Crusader Kings 2 in 2012, and now Crusader Kings 3 in
+2020. Originally a small title, it gained popular success after
+Crusader Kings 2, slowly forming a loyal player base expansion after expansion. The game can be considered the turning
+point for Paradox Interactive, where the company went from
+45 employees in 2012 to nearly 500 by 2019 (Hafer, 2019).</p>
+<p>Crusader Kings can be played single-player and multiplayer, with multiplayer replacing the ruler AIs with actual
+players. Therefore, it can involve a lot of role-playing elements. The player personates a medieval character through
+the ages, with endless possibilities of what to become: a duke,
+baroness, emperor, or even a loyal vassal. The game does
+not enforce an objective on the player, and the player has the
+choice to decide what to do. She can aim to expand her kingdom, duel her childhood friend, or even seduce the Pope. The
+only thing fixed is the setting.</p>
+<p>Crusader Kings is faithful to history in mechanics. While
+it has inaccuracies here and there, such as Low mortality
+rates(Cantalini, 2021), most of its mechanics are true to history—for instance, its detailed treatment of the feudal system.</p>
+<p>The game’s uniqueness comes from the fact that it makes
+history personalistic. Compared to Europa Universalis’ rational treatment of states, Crusader Kings is a battleground of
+rulers with different personalities(Devereaux, 2022). It creates a space where organic stories can emerge. For example, when a lazy and charming son replaces a diligent, brave
+father as ruler, significant changes will happen to the kingdom. The game’s charm comes from being entirely organically character-based. The player needs to court, balance her
+vassals and pay attention to conspirators, Unlike most grand
+strategies where rulers are abstract representations of states.</p>
+<p>Crusader Kings’ review improves with its titles. Its first
+game lacked a tutorial and had technical issues, as reflected
+in its mediocre reviews. It had depth but discouraged casual
+players because of its lack of approachability(Butts, 2004).
+Crusader Kings 2, being the pillar of the franchise, took off
+as one of the most loved grand strategy games. Being the
+unique role-play Grand strategy on the market, it has a Metacritic score of 82(Crusader Kings II, n.d.). Crusader Kings
+3, on the other hand, did even better, with a Metacritic score
+of 91. Despite that, it has a lower user score(Crusader Kings
+III, n.d.) and is less fleshed-out than its predecessor. However,
+Crusader Kings 2 have had years of expansions and community content growth. That is still to come for Crusader Kings
+3 (Hafer, 2020).</p>
+<p>As a whole, Crusader Kings is genre-defining. It created
+the character-based grand strategy genre and became one of
+the best Paradox titles and grand strategy games. It is even
+more famous for its countless player-created content and its
+sizable modding community.</p>
+<h3 id="22-crusader-kings-modding">2.2 Crusader Kings’ Modding</h3>
+<p>Modding has evolved over the years for Crusader Kings. Crusader Kings 1 does not have mods available online, not on
+Steam Workshop or Nexus mods. Some tools exist, such as
+the DNA maker(Useful Tools, n.d.), where you can change
+characters’ appearance, but that is about it. The modding for
+the game only took off after Crusader Kings 2, after it slowly
+gained following. It was an excellent platform for hosting
+character-based fiction for its role-playing elements. Game
+of throne mod was created for it, which benefited the game
+greatly (Kaiser, 2016). Modders have many choices in modding. From minor mods that add icons and portraits to overhaul mods and total conversion mods that can completely ignore vanilla directories (Modding - Crusader Kings II Wiki,
+n.d.).</p>
+<p>Crusader Kings 3 expands on Crusader Kings 2’s modding
+even more. The game is now powered by the brand new Jomini Engine, which expanded on ways the game could be
+modded. It includes DirectX features, dynamic audio, and
+better performance options. It also lowers the barrier to entry
+for modders, as now modders can mod even without knowing
+any scripting (Boudreau, 2018). One of the interviewees who
+had worked in Paradox as a content developer for Crusader
+Kings 3 also mentions that modders are given the same tools
+to create in-game content as paradox employees.</p>
+<p>The modding community currently revolves mainly around
+steam workshops, with its discord server for easy collaboration between modders. It has 5000+ mods for Crusader Kings
+3 in just two years. Other platforms that host mods also exist,
+such as Mod Nexus and Paradox’s website, although with a
+smaller mod base.</p>
+<h2 id="3-methodology">3 Methodology</h2>
+<p>The methodology of the paper is Qualitative analysis, using
+grounded theory specifically. It creates codes from the interview data.</p>
+<p>Qualitative analysis is selected instead of quantitative analysis because surveying many Crusader Kings’ modders in the
+selected time frame is impossible. In addition, quantitative
+analysis is more suitable for gathering value-based data. For
+something ingrained such as personal motivations, in-depth
+personal discussions are more suitable. At the same time,
+surveying methods can lead to superficial answers.</p>
+<h3 id="31-grounded-theory">3.1 Grounded theory</h3>
+<p>Grounded theory, a qualitative method, combines the strength
+of quantitative and qualitative approaches. It is a method for
+discovering common themes in the collected qualitative data.
+It first breaks down the data into labels and then finds the similarities and differences through categorisation. It is an iterative process to reduce the data to its core themes or theories
+(Walker &amp; Myrick, 2006).</p>
+<p>It first collects data related to the topic through forms such
+as accessing public records, biography, news report, and faceto-face conversation. Both qualitative and quantitative data
+can be collected for analysis (Brodin, Hellzen, &amp; H ´ aggstr ¨ om, ¨
+2017). This paper uses interviews as means of data collection
+and focuses purely on qualitative data.</p>
+<p>After that, the collected data are open-coded, where textual
+data are labelled and broken up, forming codes(Flick, 2018).
+Axial coding is then used to find the relationship between
+these codes, forming categories. Memos are written throughout the process to document the details during the coding process.</p>
+<p>After the core categories emerge, selective coding starts,
+which connects the related categories around one central category. The core category then represents the central thesis
+of the research. The open coding, axial coding and selective
+coding process are also iterative and should be treated as a
+non-linear process in order to consolidate the data (Williams
+&amp; Moser, 2019) continuously. Finally, the coding outcome is
+developed into theory.</p>
+<h3 id="32-demographic-selection">3.2 Demographic Selection</h3>
+<p>A subset of the modding community is selected from the
+Crusader Kings modding collaboration discord. The discord
+hosts players of varying skill levels, from brand new modders that only started days ago to very experienced ones that
+had been doing it for years. Some even have direct ties with
+Paradox and have worked on the game itself as content developers. The discord provides a good selection of modders that
+ensures sample variety. A total of 10 participants were interviewed and selected based on their skill levels, from very experienced to completely inexperienced. Inexperienced modders provide fresh motivations, as their decision to start modding is recent. They can provide direct accounts. Experienced modders, on the other hand, have long-lasting motivations that keep them going and are likely to have worked on
+big collaborative modding projects. They can provide more
+detailed and personal accounts. Both kinds are valuable for
+analysing the commonalities.</p>
+<h3 id="33-interview-questions">3.3 Interview Questions</h3>
+<p>The interviews are in free-flow form, as the research is exploratory. The questions are open-ended and focus on discovering their motivation. As the participants’ skill levels
+vary, the questions are also modified accordingly. Depending on their initial answers, follow-up questions were added
+as further exploration. Their ages were also queried to gain a
+perspective on the demography of Crusader Kings’ modding
+community.</p>
+<p><strong>The general questions are listed below:</strong>
+- How experienced are you with modding?
+- When did you start modding?
+- When did you start modding for Crusader Kings?
+- How long have you been modding? What drove you to
+continue?
+- What motivates you to mod?</p>
+<h3 id="34-privacy">3.4 Privacy</h3>
+<p>Because of the subjectivity of the answers of interviewees,
+the results can be identifying. Therefore, subjects interviewed
+during the research will remain unnamed to protect their privacy.</p>
+<h2 id="4-results">4 Results</h2>
+<h3 id="41-open-coding">4.1 Open Coding</h3>
+<ul>
+<li>Creative aspect</li>
+<li>Practice writing skills</li>
+<li>Roleplay</li>
+<li>Love of history</li>
+<li>Teamwork</li>
+<li>Make another universe playable</li>
+<li>Love the vanilla game</li>
+<li>Fan of other franchises</li>
+<li>Fan of other mods</li>
+<li>Versatile platform</li>
+<li>Good documentation</li>
+<li>Expanded tools</li>
+<li>Industry knowledge</li>
+<li>Same tools as Paradox employees</li>
+<li>Collaboration</li>
+<li>Entry to programming</li>
+<li>Vanilla roleplay annoyances</li>
+<li>Game famous for its mods</li>
+<li>Easy to ask questions</li>
+<li>Community atmosphere</li>
+<li>Starting small</li>
+<li>Easy to find Collaboration</li>
+<li>Other’s Code available</li>
+<li>No programming knowledge required</li>
+<li>Fixing own gripes</li>
+<li>Create visual effects</li>
+<li>Shader follows industry standard</li>
+<li>No prerequisites</li>
+<li>Advantage from pre-existing programming experience</li>
+<li>To prove oneself</li>
+<li>Enjoy problem-solving</li>
+<li>Requests from community</li>
+<li>Helping other modders</li>
+<li>Easy to jump into work</li>
+<li>Joining an interesting project</li>
+<li>Project success</li>
+<li>Project gained following</li>
+<li>Easy to join projects</li>
+<li>Minimal schedule requirement</li>
+<li>Ties into the current profession</li>
+<li>Game is intuitive to mod</li>
+<li>Simple for beginner modders</li>
+<li>To change things up</li>
+<li>Help out another mod team</li>
+<li>Long hours in the vanilla game</li>
+<li>Fan of Paradox franchises</li>
+<li>Making own scenarios</li>
+<li>Relative ease in modding</li>
+<li>Easier than any programming language</li>
+<li>Just text files</li>
+<li>Can view base game code</li>
+<li>Jomini engine increased modding ease</li>
+<li>Expanded moddable content</li>
+<li>Workarounds to create sophisticated content</li>
+<li>Lots of community interaction</li>
+<li>Great internet resources</li>
+<li>Not difficult</li>
+<li>Easier to build on top</li>
+<li>Enjoy a self-created world with friends</li>
+<li>Having others play my mod</li>
+<li>Cannot make a real game</li>
+</ul>
+<h3 id="42-axial-coding">4.2 Axial Coding</h3>
+<p><strong>Improve Vanilla Game</strong>
+Motivated by discontent with the vanilla game, and wish to
+add more or fix certain features.
+(Vanilla roleplay annoyances, To change things up, Fixing
+own gripes)</p>
+<p><strong>Self-improvement</strong>
+Motivated by wanting to improve one’s skills or achieve
+personal objectives.
+(Entry to programming, To prove oneself, Practice writing
+skills)</p>
+<p><strong>Community Aid</strong>
+Motivated because help is always available from the community. Lots of community feedback on your work.
+(Other’s code available, Community atmosphere, Easy to ask
+questions, Requests from community, Lots of community
+interaction, Great internet resources)</p>
+<p><strong>Collaborative Synergy</strong>
+Motivated because interesting collaborative projects are
+always available from the modding community that are
+flexible.
+(Easy to join projects, Easy to find collaboration, Joining an
+interesting project, Teamwork, Collaboration, Easy to jump
+into work, Help out another mod team, Minimal schedule
+requirement)</p>
+<p><strong>Modding Support</strong>
+Motivated because of the great modding support from
+paradox, which makes it easy to create anything they want.
+(Expanded tools, Jomini engine increased modding Ease,
+Can view base game code, Good documentation, Expanded
+moddable content, Workarounds to create sophisticated
+content, Same tools as Paradox employees, Shader follows
+industry standard)</p>
+<p><strong>Creative Actualization</strong>
+Motivated because they get to enact their creative vision.
+(Creative aspect, Roleplay, Make another universe playable,
+Making own scenarios, Create visual effects, Enjoy a selfcreated world with friends)</p>
+<p><strong>Related Hobby</strong>
+Motivated because modding gives them a chance to participate in their hobbies.
+(Love of history, Fan of other franchises, Enjoy problemsolving)</p>
+<p><strong>Low Barriers to Entry</strong>
+Motivated because of how easy it is to start modding, and
+therefore easy to keep going.
+(No programming knowledge required, Starting small, No
+prerequisites, game is intuitive to mod, Not difficult, Relative
+Ease in modding, Simple for beginner modder, Just txt files,
+Easer than any programming language)</p>
+<p><strong>Fond of the Game</strong>
+Motivated because they love the vanilla game, and wants to
+create content for it.
+(Love the vanilla game, Long hours in vanilla game, Fan of
+paradox franchises, Game famous for its mods, Fan of other
+mods)</p>
+<p><strong>Existing Expertise</strong>
+Motivated because they have existing expertise related to
+modding. Making it easy to keep going.
+(Industry knowledge, Advantage from pre-existing programming experience, Ties into current profession)</p>
+<p><strong>Game as Creative Platform</strong>
+Motivated because they can use the game as a platform to
+enact their vision. Almost like playing in a sandbox.
+(Versatile platform, Can’t make a real game, Easier to build
+on top)</p>
+<p><strong>For Supporters</strong>
+Motivated because supporters are waiting to play their mod.
+Wish to contribute to the supporters.
+(Having others play my mod, Project success, Project gained
+following)</p>
+<h3 id="43-selective-coding">4.3 Selective Coding</h3>
+<p>Axial coding was applied again along with this process as
+more general patterns emerged. For instance, Low Barrier to
+Entry, Modding Support and Existing Expertise are all related
+to the difficulty of the modding process and can be merged
+into a single category.</p>
+<p>After the final secondary categories had emerged, as shown
+in figure 1, it was clear that vision realization is the main
+theme for mod creation. The category community distinguish
+whether the vision is collective or singular and demonstrates
+community support. Technical Ease serves to make modding
+more accessible and give modders more freedom. Game Optimization and Creativity are two different but not mutually
+exclusive vision goals in themselves. Self-actualization is a
+result of achieving their visions. All categories either are the
+vision or help with achieving the vision.</p>
+<h2 id="5-discussion">5 Discussion</h2>
+<h3 id="51-process-reflection">5.1 Process reflection</h3>
+<p>Figure 1: The Selective Coding where the core category ”Realization of Vision” emerges; Realizing vision itself is always the goal,
+regardless of collaboratively or individually. Modding support or a
+Low barrier to entry merely supports that goal.</p>
+<p>Because the paper used free-flow interviews to collect data,
+the amount of data generated per interviewee varies. This method can make the codes generated lean towards some of
+the more talkative interviewees. Some were very willing to
+share, even providing their previous interviews as references.
+In contrast, some others were less willing to talk. This bias
+could be mitigated if there were a larger selection of interviewees. However, that leads to the next concern, the number of
+codes.</p>
+<p>The number of codes the analysis stage included can cause
+omission. Too many codes could be extracted from the data
+as motivation, as ten people were interviewed. This sample is
+still quite large for qualitative analysis. The significant number of codes increased the difficulty of axial coding, and the
+more codes there are, the more different ways the data could
+be interpreted. There exist code relations that this paper was
+not able to find. One way to mitigate this is to have multiple people perform the same process, which could not be
+performed in this paper because of time constraints.</p>
+<p>Also, axial coding was performed twice instead of doing
+the entire process multiple times. Partly because the number
+of categories available made it too difficult to find the core
+category and partly because there are clear relations between
+specific categories. It was an excellent decision to perform
+axial coding again, as it made selective coding much more
+straightforward.</p>
+<h3 id="52-result-reflection">5.2 Result reflection</h3>
+<p>The resulting core category was Realization of Vision. The
+final secondary categories were all surrounded by the same
+theme. For Community, it is usually some shared vision
+that needs to be expressed. For Game Optimization, SelfActualization and Creativity, they are different visions, with
+different goals needing to be realized. For Technical Ease,
+they are an assortment of tools that helps with vision realization. Therefore it can be concluded that modders mod
+because they wish to enforce or see their vision achieved,
+whether individual or collaborative. They are more likely to
+continue if there is support from the community, and easy access to tools and help.</p>
+<p>The issue with the final theory is that it can be obvious.
+Also, it gives little guidance on how to build a loyal modding
+community. Modding itself can reflect that you want to create
+something, which already means you want to realize a particular vision. Therefore, this paper’s open and axial codes are
+more valuable for community building purposes, for finding
+ways to draw people to mod. They give more detailed information on why people mod.</p>
+<p>The Technical Ease category, for instance, gives concrete
+steps on what the company could do if encouraging modding
+is the goal. It can be done by making game content code
+available, expanding modding tools, making more aspects of
+the game moddable, have good documentation.</p>
+<h3 id="53-related-research">5.3 Related Research</h3>
+<p>Research on modding communities exists but is rare. We
+were able to find one done on another game title, Skyrim. It
+follows a similar research process to this paper, using ground
+theory. The difference is that they used surveys as means of
+data collection. They concluded that modders are motivated
+by several motivations instead of just one or two, and interconnectivity exist between them. They found their motivations are correcting game flaws, artistic expression, personal
+advancement and enjoyment(Hackman &amp; Bjorkqvist, 2014).</p>
+<h2 id="6-conclusion">6 Conclusion</h2>
+<p>This paper set out to find why modders are encouraged to mod
+for Crusader Kings, what drew them towards modding for the
+game. Specifically, the commonalities between their motivations. We were able to find the answers to these questions,
+with both a general motivation and more diverse motivations
+specific to the individual.</p>
+<p>We found that modders mod for Crusader Kings because
+they wish to realize their vision. It can be a collective vision
+or a singular vision. Their goals are primarily divided into
+either creative purposes or optimizing the game as forms of
+self-actualization. Their motivations are further increased by
+the community help surrounding it and the technical ease of
+creating mods.</p>
+<h2 id="references">References</h2>
+<p>Boudreau, I. (2018, October). Future Paradox games will
+be easier to mod, thanks to a new engine. Retrieved
+2022-12-10, from https://www.pcgamesn.com/
+imperator-rome/paradox-new-engine-jomini</p>
+<p>Brodin, K., Hellzen, O., &amp; H ´ aggstr ¨ om, M. (2017, ¨
+September). Intraoperative Care of the Conscious
+Patient from the Perspective of the Operating Theatre Nurse: A Grounded Theory. Open Journal of
+Nursing, 7(9), 1086–1099. Retrieved 2022-12-06,
+from http://www.scirp.org/Journal/Paperabs
+.aspx?paperid=79314 (Number: 9 Publisher: Scientific Research Publishing) doi: 10.4236/ojn.2017
+.79079</p>
+<p>Brown, F. (2022, January). The best Crusader Kings
+3 mods. PC Gamer. Retrieved 2022-12-08,
+from https://www.pcgamer.com/best-crusader
+-kings-3-ck3-mods/</p>
+<p>Butts, S. (2004, September). Crusader Kings. Retrieved 2022-12-08, from https://www.ign.com/
+articles/2004/09/24/crusader-kings</p>
+<p>Cantalini, J. M. (2021, February). Crusader Kings 3: 10
+Things That Are Historically Inaccurate. Retrieved
+2022-12-08, from https://www.thegamer.com/
+crusader-kings-3-historical-inaccuracies/
+(Section: Lists)</p>
+<p>Crusader Kings II. (n.d.). Retrieved 2022-12-
+08, from https://www.metacritic.com/game/
+pc/crusader-kings-ii</p>
+<p>Crusader Kings III. (n.d.). Retrieved 2022-12-
+08, from https://www.metacritic.com/game/
+pc/crusader-kings-iii</p>
+<p>Devereaux, B. (2022, September). Collections:
+Teaching Paradox, Crusader Kings III, Part
+I: Making It Personal. Retrieved 2022-12-
+08, from https://acoup.blog/2022/09/16/
+collections-teaching-paradox-crusader
+-kings-iii-part-i-making-it-personal/</p>
+<p>Flick, U. (2018). Doing Grounded Theory. 1 Oliver’s
+Yard, 55 City Road London EC1Y 1SP: SAGE
+Publications Ltd. Retrieved 2022-12-06, from
+https://methods.sagepub.com/book/doing
+-grounded-theory doi: 10.4135/9781529716658</p>
+<p>Hackman, E., &amp; Bjorkqvist, U. (2014). ¨ Modders of Skyrim:
+Motivations and Modifications : A qualitative study
+of what motivations and modifications the modders of
+Elder Scrolls: Skyrim exhibit. Retrieved 2022-12-06,
+from http://urn.kb.se/resolve?urn=urn:nbn:
+se<img alt="🇸🇭" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1f8-1f1ed.svg" title=":sh:">diva-29704</p>
+<p>Hafer, L. (2019, October). How Crusader Kings 2
+Turned Paradox Into a Powerhouse. Retrieved
+2022-12-08, from https://www.usgamer.net/
+articles/how-crusader-kings-2-changed
+-paradox-feature-interview</p>
+<p>Hafer, L. (2020, August). Crusader Kings 3 Review.
+Retrieved 2022-12-08, from https://www.ign.com/
+articles/crusader-kings-3-review</p>
+<p>Kaiser, R. (2016, January). Video Game Modding Is Going
+Legit, and We’re All Winning. Retrieved 2022-12-
+10, from https://www.inverse.com/article/
+10498-video-game-modding-is-going-legit
+-and-we-re-all-winning</p>
+<p>Modding - Crusader Kings II Wiki. (n.d.). Retrieved 2022-
+12-10, from https://ck2.paradoxwikis.com/
+Modding</p>
+<p>Useful Tools. (n.d.). Retrieved 2022-12-10, from
+https://crusaderkings.fandom.com/wiki/
+Useful Tools</p>
+<p>Walker, D., &amp; Myrick, F. (2006, April). Grounded
+Theory: An Exploration of Process and Procedure. Qualitative Health Research, 16(4), 547–559.
+Retrieved 2022-12-06, from https://doi.org/10
+.1177/1049732305285972 (Publisher: SAGE Publications Inc) doi: 10.1177/1049732305285972</p>
+<p>Williams, M., &amp; Moser, T. (2019). The Art of Coding and Thematic Exploration in Qualitative
+Research. undefined. Retrieved 2022-12-06,
+from https://www.semanticscholar.org/
+paper/Visual-Journaling-in-Early
+-Psychosis-Treatment%3A-An-Vandenberg/
+53de22de552a0f49c73bbdf6eb398990d76aef55</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Haocheng Yang
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="google.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="google.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="google.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>
